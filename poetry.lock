@@ -601,22 +601,6 @@ files = [
 ]
 
 [[package]]
-name = "error-generation"
-version = "0.1.0"
-description = "Fully-controllable error generation for tabular data."
-optional = false
-python-versions = "^3.9,<3.12"
-files = []
-develop = true
-
-[package.dependencies]
-pandas = "^2.2.1"
-
-[package.source]
-type = "directory"
-url = "../error-generation"
-
-[[package]]
 name = "exceptiongroup"
 version = "1.2.2"
 description = "Backport of PEP 654 (exception groups)"
@@ -2755,6 +2739,20 @@ pure-eval = "*"
 tests = ["cython", "littleutils", "pygments", "pytest", "typeguard"]
 
 [[package]]
+name = "tab-err"
+version = "0.1.0"
+description = "Fully-controllable error generation for tabular data."
+optional = false
+python-versions = "<3.13,>=3.9"
+files = [
+    {file = "tab_err-0.1.0-py3-none-any.whl", hash = "sha256:41ad277f96e8a68ae9e556947387f9b3c824a5dd9819cc859e07abaf119df13d"},
+    {file = "tab_err-0.1.0.tar.gz", hash = "sha256:f4aa2a4fba7b671adc55cd374f4d0c735bd9617eb1a193c4f7adf957091f44ea"},
+]
+
+[package.dependencies]
+pandas = ">=2.2.3,<3.0.0"
+
+[[package]]
 name = "terminado"
 version = "0.18.1"
 description = "Tornado websocket backend for the Xterm.js Javascript terminal emulator library."
@@ -2985,4 +2983,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.12"
-content-hash = "df03ebe2e4da43ea746ba2b3868300ebd05eac0d7c5a774bd8cdd37733fd86c2"
+content-hash = "2019f930a32e9dcba795757ac50fee815aeb27470e4a03d76b0ca4b782d42a64"
