@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "error-paper"
+version = "0.1.0"
+description = ""
+authors = ["Philipp Jung <philippjung@posteo.de>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.12"
+pandas = "^2.2.2"
+error-generation = {path = "../error-generation", develop = true}
+jupyter = "^1.0.0"
+pyarrow = "^16.1.0"
+matplotlib = "^3.9.2"
+seaborn = "^0.13.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
