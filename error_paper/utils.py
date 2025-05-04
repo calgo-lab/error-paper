@@ -29,10 +29,13 @@ def create_mcar(dataset_name: str, df_clean: pd.DataFrame, error_percentages: pd
     export_dir = Path(f'../export_data/{dataset_name}')
     export_dir.mkdir(parents=True, exist_ok=True)
     
-    mid_lvl_config = {column: [ErrorModel(ECAR(), error_type.MissingValue(), float(error_percentages[column]))] for column in df_clean.columns}
-    config_missing_ecar = MidLevelConfig(mid_lvl_config)
-
     for i in range(10):
+        base_seed = i * 1000  # Using 1000 ensures no overlap between iterations
+        seeds = [base_seed + (j+1) for j in range(len(df_clean.columns))]
+
+        mid_lvl_config = {column: [ErrorModel(ECAR(seed=seeds[j]), error_type.MissingValue(), float(error_percentages[column]))] for j, column in enumerate(df_clean.columns)}
+        config_missing_ecar = MidLevelConfig(mid_lvl_config)
+
         df_corrupted, error_mask = mid_level.create_errors(df_clean, config_missing_ecar)
         df_corrupted.to_csv(export_dir / f'{dataset_name}_missing_ecar_{i}.csv', index=False)
         print(f"Saved MCAR dataset {dataset_name} iteration {i}")
