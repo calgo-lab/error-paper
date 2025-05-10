@@ -2740,13 +2740,13 @@ tests = ["cython", "littleutils", "pygments", "pytest", "typeguard"]
 
 [[package]]
 name = "tab-err"
-version = "0.1.2"
+version = "0.2.0"
 description = "Fully-controllable error generation for tabular data."
 optional = false
 python-versions = "<3.13,>=3.9"
 files = [
-    {file = "tab_err-0.1.2-py3-none-any.whl", hash = "sha256:353cfd1c2f95f2ab2d5a1a03d97318dbdf7a8a480144ac47b2d402fcc67e6f7a"},
-    {file = "tab_err-0.1.2.tar.gz", hash = "sha256:a41399447c89c30462559dd8e2bc7f46b3659352c05f9601ef11e6813c704a51"},
+    {file = "tab_err-0.2.0-py3-none-any.whl", hash = "sha256:63b45f04cc488ea8ecaf4dfb54a9172c8bb644ada486614893e0c7ab65ac4c6d"},
+    {file = "tab_err-0.2.0.tar.gz", hash = "sha256:069c6b3d422382fd6be1cb4b0eddf3432a347aff07d9c9db972ed577f5e4e52a"},
 ]
 
 [package.dependencies]
@@ -2983,4 +2983,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.12"
-content-hash = "447b03e84cbf695691b239f76e19e345d74e7c958ea9965a38e6666b594bc5da"
+content-hash = "a8cda1dadd0d96931f23b3cae16d89886154c8da366a6bf69d17a427def519ff"

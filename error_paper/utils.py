@@ -39,4 +39,9 @@ def create_mcar(dataset_name: str, df_clean: pd.DataFrame, error_percentages: pd
         df_corrupted, error_mask = mid_level.create_errors(df_clean, config_missing_ecar)
         df_corrupted.to_csv(export_dir / f'{dataset_name}_missing_ecar_{i}.csv', index=False)
         print(f"Saved MCAR dataset {dataset_name} iteration {i}")
-    df_clean.to_csv(export_dir / f'{dataset_name}_clean.csv', index=False)
+
+def verify_error_pct(clean_path: str, dirty_path: str, error_pct: dict):
+    df_clean, df_dirty = read_csv_dataset(dirty_path), read_csv_dataset(clean_path)
+    pct_observed = (df_dirty != df_clean).sum() / df_dirty.shape[0]
+    pct_deviation = (pct_observed - error_pct).sum()
+    print(f'{Path(dirty_path).name} deviates from intended error_pct by absolute {abs(pct_deviation * 100)}%.')
