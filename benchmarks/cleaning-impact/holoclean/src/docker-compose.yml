@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:11
+    container_name: pghc
+    environment:
+      POSTGRES_DB: holo
+      POSTGRES_USER: holocleanuser
+      POSTGRES_PASSWORD: abcd1234
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+
+  app:
+    image: hc36:latest
+    container_name: hc36
+    depends_on:
+      - postgres
+    environment:
+      DB_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_NAME: holo
+      DATABASE_USER: holocleanuser
+      DATABASE_PASSWORD: abcd1234
+    networks:
+      - app-network
+    #working_dir: /home/
+    #command: ["python entrypoint.py"]
+    platform: linux/amd64
+    volumes:
+      - /Users/philipp/code/error-paper/benchmarks/cleaning-impact/holoclean/holoclean_input:/home/data  # Mount datasets
+      - /Users/philipp/code/error-paper/benchmarks/cleaning-impact/results:/home/results  # Mount experiment results that you retrieve
+
+networks:
+  app-network:
+    driver: bridge
