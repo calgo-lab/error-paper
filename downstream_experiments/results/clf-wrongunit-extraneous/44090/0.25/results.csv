@@ -1,0 +1,11 @@
+clean,ECAR,EAR,ENAR,error_rate,machine_learning_model,evaluation_metric
+1.0,0.8924418604651163,0.8909883720930233,0.999031007751938,0.25,"HistGradientBoostingClassifier(max_iter=200, random_state=1234)",f1_score
+1.0,0.8842054263565892,0.8565891472868217,0.7761627906976745,0.25,"HistGradientBoostingClassifier(max_iter=200, random_state=1234)",f1_score
+1.0,0.8880813953488372,0.9006782945736435,0.999515503875969,0.25,"HistGradientBoostingClassifier(max_iter=200, random_state=1234)",f1_score
+1.0,0.8817829457364341,0.8682170542635659,0.999515503875969,0.25,"HistGradientBoostingClassifier(max_iter=200, random_state=1234)",f1_score
+0.9995152690256908,0.8841492971400873,0.9083858458555502,0.9539505574406204,0.25,"HistGradientBoostingClassifier(max_iter=200, random_state=1234)",f1_score
+0.9990305380513815,0.8952981095492002,0.879786718371304,0.9990305380513815,0.25,"HistGradientBoostingClassifier(max_iter=200, random_state=1234)",f1_score
+1.0,0.8933591856519632,0.8972370334464372,0.7498788172564227,0.25,"HistGradientBoostingClassifier(max_iter=200, random_state=1234)",f1_score
+1.0,0.8802714493456132,0.8914202617547261,1.0,0.25,"HistGradientBoostingClassifier(max_iter=200, random_state=1234)",f1_score
+1.0,0.8763936015511391,0.8991759573436743,0.8511875908870576,0.25,"HistGradientBoostingClassifier(max_iter=200, random_state=1234)",f1_score
+1.0,0.8860882210373243,0.8463402811439651,0.7503635482307319,0.25,"HistGradientBoostingClassifier(max_iter=200, random_state=1234)",f1_score

@@ -16,4 +16,4 @@ In the visualizations, we see that there is an effect of error type and mechanis
 
 3. Run notebook cells to obtain visualizations.
 
-
+The results from our experiments are in the results section. 
