@@ -1,0 +1,254 @@
+experiments:
+- dataset: beers
+  scenarios:
+  - name: original
+    versions:
+    - ''
+  - name: missing_ecar
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+  - name: scenario
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+  memory: 256Gi
+- dataset: bridges
+  scenarios:
+  - name: original
+    versions:
+    - ''
+  - name: missing_ecar
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+  - name: scenario
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+  memory: 64Gi
+- dataset: cars
+  scenarios:
+  - name: original
+    versions:
+    - ''
+  - name: missing_ecar
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+  - name: scenario
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+  memory: 64Gi
+- dataset: flights
+  scenarios:
+  - name: original
+    versions:
+    - ''
+  - name: missing_ecar
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+  - name: scenario
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+  memory: 64Gi
+- dataset: food
+  scenarios:
+  - name: original
+    versions:
+    - ''
+  - name: missing_ecar
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+  - name: scenario
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+  memory: 256Gi
+- dataset: rayyan
+  scenarios:
+  - name: original
+    versions:
+    - ''
+  - name: missing_ecar
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+  - name: scenario
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+  memory: 64Gi
+- dataset: restaurant
+  scenarios:
+  - name: original
+    versions:
+    - ''
+  - name: missing_ecar
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+  - name: scenario
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+  memory: 64Gi
+- dataset: tax
+  scenarios:
+  - name: original
+    versions:
+    - ''
+  - name: missing_ecar
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+  - name: scenario
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+  memory: 256Gi
+image:
+  repository: larmor27/hc36
+  tag: latest
+postgres:
+  image: postgres:11
+  user: holocleanuser
+  password: abcd1234
+  database: holo
+volumes:
+  dataPVC: cleaning-impact-data
+  dataMountPath: /home/data
+  resultsPVC: cleaning-impact-results
+  resultsMountPath: /home/results

@@ -1,0 +1,67 @@
+{{- range .Values.experiments }}
+  {{- $experiment := . }}  # <-- This line is necessary to capture the experiment object
+  {{- $dataset := .dataset }}
+  {{- range .scenarios }}
+    {{- $scenario := .name }}
+    {{- range .versions }}
+      {{- $version := . }}
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: baran-and-raha-{{ $dataset }}-{{ $scenario | replace "_" "-" }}{{ if $version }}-{{ $version }}{{ end }}
+spec:
+  ttlSecondsAfterFinished: 30
+  completions: 1
+  template:
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: kubernetes.io/hostname
+                    operator: NotIn
+                    values:
+                      - cl-worker37  # broken
+                      - cl-worker15  # very low disk
+      containers:
+      - name: baranraha
+        image: {{ $.Values.image.repository }}:{{ $.Values.image.tag }}
+        imagePullPolicy: Always
+        env:
+        - name: DATASET_NAME
+          value: "{{ $dataset }}"
+        - name: DATASET_SCENARIO
+          value: "{{ $scenario }}"
+        - name: DATASET_VERSION
+          value: "{{ $version }}"
+        - name: TASK
+          value: "both"
+        - name: ERROR_DETECTION_MODE
+          value: "raha"
+        volumeMounts:
+        - name: data-volume
+          mountPath: {{ $.Values.volumes.dataMountPath }}
+        - name: results-volume
+          mountPath: {{ $.Values.volumes.resultsMountPath }}
+        resources:
+          requests:
+            memory: "64Gi"
+            cpu: 16
+      restartPolicy: Never
+      volumes:
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: {{ $.Values.volumes.dataPVC }}
+      - name: results-volume
+        persistentVolumeClaim:
+          claimName: {{ $.Values.volumes.resultsPVC }}
+      tolerations:
+        - key: nvidia.com/gpu
+          operator: Exists
+          effect: NoSchedule
+  backoffLimit: 1
+{{- end }}
+{{- end }}
+{{- end }}

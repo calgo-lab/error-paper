@@ -1,0 +1,6 @@
+apiVersion: v2
+name: cleaning-impact-holoclean
+description: Runs cleaning impact experiment with holoclean
+type: application
+version: 0.1.0
+appVersion: "1.0"

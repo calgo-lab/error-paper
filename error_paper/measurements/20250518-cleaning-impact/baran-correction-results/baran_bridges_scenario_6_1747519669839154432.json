@@ -1,0 +1,1 @@
+[{"dataset_name": "bridges", "scenario": "scenario", "version": "6", "error_detection_mode": "raha", "precision": 0.8888888888888888, "recall": 0.38095238095238093, "f1": 0.5333333333333333, "runtime": 195.69471311569214}]

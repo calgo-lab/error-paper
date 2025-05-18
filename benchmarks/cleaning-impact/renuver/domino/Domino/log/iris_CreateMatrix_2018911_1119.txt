@@ -1,0 +1,17 @@
+DATASET: iris.csv
+number of rows: 149
+number of columns: 5
+
+THRESHOLDS = [2.94,0.82,103.03,1.96,1.0]
+Number of tuple pairs: 11175
+
+Start: 11:19:25
+
+Preprocessing.
+
+Time for the creation of the matrix: 128msec
+Matrix Rows 419    Duplicated 3.756    Skipped 7.000
+fastutil.hashmap size 419
+0 seconds
+Writing....
+Memory Consumption: 27MB
