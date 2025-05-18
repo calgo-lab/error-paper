@@ -1,0 +1,133 @@
+{{- range .Values.experiments }}
+  {{- $experiment := . }}  # <-- This line is necessary to capture the experiment object
+  {{- $dataset := .dataset }}
+  {{- range .scenarios }}
+    {{- $scenario := .name }}
+    {{- range .versions }}
+      {{- $version := . }}
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: holoclean-{{ $dataset }}-{{ $scenario | replace "_" "-" }}{{ if $version }}-{{ $version }}{{ end }}
+spec:
+  ttlSecondsAfterFinished: 30
+  completions: 1
+  template:
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: kubernetes.io/hostname
+                    operator: NotIn
+                    values:
+                      - cl-worker37  # broken
+                      - cl-worker15  # very low disk
+      containers:
+      - name: holoclean
+        image: {{ $.Values.image.repository }}:{{ $.Values.image.tag }}
+        imagePullPolicy: Always
+        env:
+        - name: DB_HOST
+          value: "localhost"
+        - name: DATABASE_PORT
+          value: "5432"
+        - name: DATABASE_NAME
+          value: {{ $.Values.postgres.database }}
+        - name: DATABASE_USER
+          value: {{ $.Values.postgres.user }}
+        - name: DATABASE_PASSWORD
+          value: "{{ $.Values.postgres.password }}"
+        - name: DATASET_NAME
+          value: "{{ $dataset }}"
+        - name: DATASET_SCENARIO
+          value: "{{ $scenario }}"
+        - name: DATASET_VERSION
+          value: "{{ $version }}"
+        volumeMounts:
+        - name: data-volume
+          mountPath: {{ $.Values.volumes.dataMountPath }}
+        - name: results-volume
+          mountPath: {{ $.Values.volumes.resultsMountPath }}
+        - name: signal-volume
+          mountPath: /etc/pod-signal
+        resources:
+          requests:
+            memory: {{ $experiment.memory }}
+            cpu: 16
+      - name: postgres
+        image: {{ $.Values.postgres.image }}
+        env:
+        - name: PGDATA
+          value: /var/lib/postgresql/data/pgdata
+        - name: POSTGRES_DB
+          value: {{ $.Values.postgres.database }}
+        - name: POSTGRES_USER
+          value: {{ $.Values.postgres.user }}
+        - name: POSTGRES_PASSWORD
+          value: {{ $.Values.postgres.password }}
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - name: postgres-data
+          mountPath: /var/lib/postgresql/data
+        - name: signal-volume
+          mountPath: /etc/pod-signal
+        command: ["/bin/bash", "-c"]
+        args:
+          - |
+            echo "Starting Postgres...";
+            # Use the standard postgres entrypoint in the background
+            # This is often a more reliable way to start postgres in a container
+            # than just pg_ctl start, as it handles initialization etc.
+            # If your image's entrypoint supports it, use it:
+            docker-entrypoint.sh postgres &
+            PG_PID=$! # Capture the PID
+            echo "Postgres started. Waiting for signal file /etc/pod-signal/holoclean_done...";
+            while [ ! -f /etc/pod-signal/holoclean_done ]; do
+              # Optional: Add a check here if the postgres process died unexpectedly
+              # if ! kill -0 $PG_PID 2>/dev/null; then
+              #   echo "Postgres process died unexpectedly. Exiting."
+              #   exit 1
+              # fi
+              sleep 2;
+            done;
+            echo "Job done signal received, stopping Postgres...";
+            # Send SIGTERM to the background process for graceful shutdown
+            kill -SIGTERM $PG_PID
+            wait $PG_PID # Wait for postgres to finish shutting down
+            echo "Postgres stopped. Exiting sidecar container.";
+            exit 0; # Exit successfully
+        resources:
+          requests:
+            memory: "16Gi"
+            cpu: 8
+      restartPolicy: Never
+      volumes:
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: {{ $.Values.volumes.dataPVC }}
+      - name: results-volume
+        persistentVolumeClaim:
+          claimName: {{ $.Values.volumes.resultsPVC }}
+      - name: postgres-data
+        ephemeral:
+          volumeClaimTemplate:
+            spec:
+              accessModes: [ "ReadWriteOnce" ] # Typical for a single pod needing write access
+              storageClassName: "cephcsi"      # Use your desired StorageClass
+              resources:
+                requests:
+                  storage: 30Gi            # Request the necessary storage size (adjust as needed)
+      - name: signal-volume # Define the shared emptyDir volume
+        emptyDir: {}
+      tolerations:
+        - key: nvidia.com/gpu
+          operator: Exists
+          effect: NoSchedule
+  backoffLimit: 1
+{{- end }}
+{{- end }}
+{{- end }}
