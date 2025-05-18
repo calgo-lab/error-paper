@@ -1,0 +1,17 @@
+DATASET: iris.csv
+number of rows: 149
+number of columns: 5
+
+THRESHOLDS = [4.0,4.0,4.0,4.0,4.0]
+Number of tuple pairs: 789396
+
+Preprocessing.....
+Time for uploading the difference relation: 246msec
+0 seconds
+
+Number of Discovered RFDs: 24
+
+Pre-processing time: 246 millisec 
+Discovery time: 1243 millisec 
+Complete time: 1489 millisec 
+Memory Consumption: 42MB

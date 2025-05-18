@@ -1,0 +1,6 @@
+Dataset/*.csv
+Candidates/*.csv
+InitialTuples/*.csv
+KeyRFDs/*.csv
+NonKeyRFDs/*.csv
+ImputationResults/*.csv

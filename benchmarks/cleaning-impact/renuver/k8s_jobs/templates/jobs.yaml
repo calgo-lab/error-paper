@@ -1,0 +1,70 @@
+{{- range .Values.experiments }}
+  {{- $experiment := . }}  # <-- This line is necessary to capture the experiment object
+  {{- $dataset := .dataset }}
+  {{- range .scenarios }}
+    {{- $scenario := .name }}
+    {{- range .versions }}
+      {{- $version := . }}
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: renuver-{{ $dataset }}-{{ $scenario | replace "_" "-" }}{{ if $version }}-{{ $version }}{{ end }}
+spec:
+  ttlSecondsAfterFinished: 30
+  completions: 1
+  template:
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: kubernetes.io/hostname
+                    operator: NotIn
+                    values:
+                      - cl-worker37  # broken
+                      - cl-worker15  # very low disk
+      containers:
+      - name: renuver
+        image: {{ $.Values.image.repository }}:{{ $.Values.image.tag }}
+        imagePullPolicy: Always
+        env:
+        - name: DATASET_NAME
+          value: "{{ $dataset }}"
+        - name: DATASET_SCENARIO
+          value: "{{ $scenario }}"
+        - name: DATASET_VERSION
+          value: "{{ $version }}"
+        volumeMounts:
+        - name: data-volume
+          mountPath: /app/Dataset
+          subPath: Dataset
+        - name: data-volume
+          mountPath: /app/RFD
+          subPath: RFD
+        - name: data-volume
+          mountPath: /app/InitialTuples
+          subPath: InitialTuples
+        - name: results-volume
+          mountPath: /app/results
+        resources:
+          requests:
+            memory: "64Gi"
+            cpu: 16
+      restartPolicy: Never
+      volumes:
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: cleaning-impact-data-renuver
+      - name: results-volume
+        persistentVolumeClaim:
+          claimName: cleaning-impact-results
+      tolerations:
+        - key: nvidia.com/gpu
+          operator: Exists
+          effect: NoSchedule
+  backoffLimit: 1
+{{- end }}
+{{- end }}
+{{- end }}
