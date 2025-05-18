@@ -33,7 +33,7 @@ def create_mcar(dataset_name: str, df_clean: pd.DataFrame, error_percentages: pd
         base_seed = i * 1000  # Using 1000 ensures no overlap between iterations
         seeds = [base_seed + (j+1) for j in range(len(df_clean.columns))]
 
-        mid_lvl_config = {column: [ErrorModel(ECAR(seed=seeds[j]), error_type.MissingValue({'missing_value': 'N/A'}), float(error_percentages[column]))] for j, column in enumerate(df_clean.columns)}
+        mid_lvl_config = {column: [ErrorModel(ECAR(seed=seeds[j]), error_type.MissingValue({'missing_value': '?'}), float(error_percentages[column]))] for j, column in enumerate(df_clean.columns)}
         config_missing_ecar = MidLevelConfig(mid_lvl_config)
 
         df_corrupted, error_mask = mid_level.create_errors(df_clean, config_missing_ecar)

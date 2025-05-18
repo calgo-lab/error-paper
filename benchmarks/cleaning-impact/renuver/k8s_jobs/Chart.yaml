@@ -1,0 +1,9 @@
+apiVersion: v2
+name: cleaning-impact-renuver
+description: Runs the renuver cleaning impact experiment on a k8s cluster
+
+type: application
+
+version: 0.1.0
+
+appVersion: "1.16.0"

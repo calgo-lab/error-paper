@@ -11,5 +11,12 @@ Specifically,
 We use [poetry](https://python-poetry.org/) to manage dependencies. Simply run `poetry install` to install all dependencies.
 
 ## Experiments
-In our experiments, we generate various erroneous versions of the `HOSP` dataset and clean them with `HoloClean`.
+In our experiments, we examine data cleaning and downstream machine learning task impact using `tab_err`. 
+- In the first part of the data cleaning experiments, we generate various erroneous versions of the `HOSP` dataset and clean them with `HoloClean` (`benchmarks/hosp-impact`). 
+- We then proceed to generate various erroneous versions of datasets `bridges`, `beers`, `restaurant` and `cars` and correct them with algorithms baran&raha, holoclean and renuver (`benchmarks/cleaning-impact`).
+- In the downstream machine learning task impact, we look at how ML models behave given data with various errors (`benchmarks/ml_downstream_experiments`).
+
 Check the documentation in `benchmarks/README.md` for instructions on how to replicate our measurements.
+
+## Profiling
+We also looked at the memory and runtime of `tab_err` using various error models and dataset sizes. See the directory `benchmarks/profiling` for examples.

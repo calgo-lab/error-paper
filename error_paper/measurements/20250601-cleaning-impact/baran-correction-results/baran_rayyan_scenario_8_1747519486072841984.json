@@ -1,0 +1,1 @@
+[{"dataset_name": "rayyan", "scenario": "scenario", "version": "8", "error_detection_mode": "raha", "precision": 0.24344569288389514, "recall": 0.20569620253164558, "f1": 0.22298456260720412, "runtime": 264.5016598701477}]
