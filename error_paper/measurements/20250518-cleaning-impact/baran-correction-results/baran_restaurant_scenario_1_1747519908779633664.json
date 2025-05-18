@@ -1,0 +1,1 @@
+[{"dataset_name": "restaurant", "scenario": "scenario", "version": "1", "error_detection_mode": "raha", "precision": 0.6744186046511628, "recall": 0.1870967741935484, "f1": 0.292929292929293, "runtime": 261.9064824581146}]
