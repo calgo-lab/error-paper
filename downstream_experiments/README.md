@@ -20,7 +20,7 @@ The F1 scores of models evaluated on ENAR errored data have the largest variance
 The F1 scores of models evaluated on ECAR errored data have the smallest variance in the majority of the examined plots. 
 The F1 scores of models evaluated on EAR errored data have variance between the ECAR and ENAR cases in the majority of examined plots.
 
-After running pairwise non-parametric KS tests on the cross validated F1 scores of all selected datasets, we find that at the significance level of $\alpha = 0.05$, there are statistically significant differences in the F1 score distributions of different error mechanisms.
+After running pairwise non-parametric KS tests on the cross validated F1 scores of all selected datasets, we find that at the significance level of $\alpha = 0.05$, there are statistically significant differences in the cross validated F1 score distributions of different error mechanisms.
 
 While the differences in variance between the distributions of F1 scores was more prevalent, an illustrative example of a difference in measures of centrality is the case of dataset_id 44162 with an error rate of 0.25. Here one sees the difference in medians (verify this with a statistical test @ alpha=0.05, too why not).
 
@@ -29,6 +29,8 @@ While the differences in variance between the distributions of F1 scores was mor
 *Conclusion?*
 
 A difference in variance of cross validation scores indicates that some error mechanisms have a larger effect on the model performance than others. If there is large variance, the model behaves less consistently when the given mechanism is applied. If there is little variance, the model behaves more consistently when the given mechanism is applied. The little variance case is desirable due to the increased confidence in estimates of average model performance. This change in consistency of performance, when all other controllable variables are held constant, is indicative of an effect from the change in error mechanism. That is, different error mechanisms, through difference in model performance consistency, have an effect on overall model performance in downstream machine learning tasks.
+
+Moreover, the variance of model performance on data errored with the ECAR mechanism tends to be smaller indicating that the tree based model used is more robust to the ECAR error mechanism. This could indicate that there is a need to develop models robust to the corruption by the other error mechanisms as they also occur in data.
 
 ## To get results, per experiment
 
