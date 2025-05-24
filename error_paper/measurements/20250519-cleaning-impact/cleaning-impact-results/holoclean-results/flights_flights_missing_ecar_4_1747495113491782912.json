@@ -1,0 +1,1 @@
+{"precision": 0.31519548569125355, "recall": 0.3179508030087416, "repair_recall": 0.3179508030087416, "f1": 0.31656714907398037, "repair_f1": 0.31656714907398037, "detected_errors": 4919.0, "total_errors": 4919.0, "correct_repairs": 1564.0, "total_repairs": 4962.0, "total_repairs_grdt": 4962.0, "total_repairs_grdt_correct": 3398.0, "total_repairs_grdt_incorrect": 1564.0}
