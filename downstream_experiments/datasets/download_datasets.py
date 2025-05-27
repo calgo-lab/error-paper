@@ -1,5 +1,4 @@
 import openml
-import pandas as pd
 
 ids = [44120,
        44122,
