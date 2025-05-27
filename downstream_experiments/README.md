@@ -1,6 +1,8 @@
 # Downstream Effect of Errors
 
-This code corresponds to the downstream effect of `tab_err` on machine learning models from the paper.
+This code corresponds to the downstream effect of `tab_err` on machine learning models from the paper. 
+
+15 OpenML datasets are used in the experiments.
 
 ## To get results, per experiment
 
