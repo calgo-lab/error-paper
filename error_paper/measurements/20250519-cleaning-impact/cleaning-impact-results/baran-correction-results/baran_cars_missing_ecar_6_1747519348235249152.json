@@ -1,0 +1,1 @@
+[{"dataset_name": "cars", "scenario": "missing_ecar", "version": "6", "error_detection_mode": "raha", "precision": 0.2615803814713896, "recall": 0.11707317073170732, "f1": 0.16175231676495366, "runtime": 242.2257661819458}]

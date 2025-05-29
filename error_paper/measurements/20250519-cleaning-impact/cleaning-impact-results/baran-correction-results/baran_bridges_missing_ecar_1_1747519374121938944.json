@@ -1,0 +1,1 @@
+[{"dataset_name": "bridges", "scenario": "missing_ecar", "version": "1", "error_detection_mode": "raha", "precision": 0.9166666666666666, "recall": 0.55, "f1": 0.6874999999999999, "runtime": 204.03528571128845}]

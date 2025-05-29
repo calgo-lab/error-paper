@@ -25,4 +25,12 @@
 
 # 137 - works
 #java -jar -Xms2g -Xmx52g CreateMatrix.jar "137.csv" "true" "," "empty" "false" "6" "true"
-java -jar -Xms2g -Xmx52g Domino.jar "datasets/137.csv" "true" "," "empty" "false" "6" "true"
+#java -jar -Xms2g -Xmx52g Domino.jar "datasets/137.csv" "true" "," "empty" "false" "6" "true"
+
+# tax - works
+#java -jar -Xms2g -Xmx52g CreateMatrix.jar "tax.csv" "true" "," "empty" "false" "6" "true"
+#java -jar -Xms2g -Xmx52g Domino.jar "datasets/tax.csv" "true" "," "empty" "false" "6" "true"
+
+# food - works
+#java -jar -Xms2g -Xmx52g CreateMatrix.jar "food.csv" "true" "," "empty" "false" "6" "true"
+java -jar -Xms2g -Xmx52g Domino.jar "datasets/food.csv" "true" "," "empty" "false" "6" "true"

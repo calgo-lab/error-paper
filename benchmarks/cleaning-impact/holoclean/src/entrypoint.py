@@ -66,12 +66,15 @@ def run_docker_compose():
     """
     #versions = range(10)
     versions = range(1)
-    dataset_names = ["bridges", "cars", "restaurant", "beers", "flights", "rayyan", "food", "tax"]
+    #dataset_names = ["bridges", "cars", "restaurant", "beers", "flights", "rayyan", "food", "tax"]
+    #scenarios = ['missing_ecar', 'scenario']
+    dataset_names = ["beers"]
+    scenarios = ['missing_ecar']
 
     # run generated datasets
     for dataset_name in dataset_names:
         clean_table = dataset_name
-        for scenario in ['missing_ecar', 'scenario']:
+        for scenario in scenarios:
             for version in versions:
                 dirty_table = f'{dataset_name}_{scenario}_{version}'
                 run_hc(dataset_name, clean_table, dirty_table)

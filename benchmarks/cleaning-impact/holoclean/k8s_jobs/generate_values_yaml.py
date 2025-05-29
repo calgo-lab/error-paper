@@ -7,31 +7,25 @@ class NoAliasDumper(yaml.SafeDumper):
 
 datasets = [
     "beers",
-    "bridges",
-    "cars",
-    "flights",
-    "food",
-    "rayyan",
-    "restaurant",
-    "tax"
-]
-
-scenarios = [
-    "original",
-    "missing_ecar",
-    "scenario"
+    #"bridges",
+    #"cars",
+    #"flights",
+    #"food",
+    #"rayyan",
+    #"restaurant",
+    #"tax"
 ]
 
 multi_version_scenarios = {
-    "original": [""],
+    #"original": [""],
     "missing_ecar": [str(i) for i in range(10)],
-    "scenario": [str(i) for i in range(10)]
+    #"scenario": [str(i) for i in range(10)]
 }
 
 experiments = []
 for dataset in datasets:
     scenario_list = []
-    for scenario in scenarios:
+    for scenario in multi_version_scenarios:
         versions = multi_version_scenarios[scenario][:]
         scenario_list.append({
             "name": scenario,
@@ -40,7 +34,7 @@ for dataset in datasets:
     experiments.append({
         "dataset": dataset,
         "scenarios": scenario_list,
-        "memory": "256Gi" if dataset in ['tax', 'beers', 'food'] else "64Gi"
+        "memory": "512Gi" if dataset in ['tax', 'food'] else "256Gi"
     })
 
 values = {
