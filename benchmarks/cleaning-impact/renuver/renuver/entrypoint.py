@@ -140,6 +140,6 @@ def main():
     print(f'Finished running RENUVER, wrote results to {filename}.')
 
 if __name__ == "__main__":
-    main()
-    #run_task(dataset_name='bridges', scenario='missing-ecar',version='0')
-    #run_task(dataset_name='bridges', scenario='original',version='0')
+    #main()
+    #run_task(dataset_name='food', scenario='missing-ecar',version='0')
+    run_task(dataset_name='rayyan', scenario='scenario',version='0')
