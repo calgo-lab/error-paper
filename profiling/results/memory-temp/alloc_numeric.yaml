@@ -1,14 +1,14 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: mem-profile-numeric   # Directory on cluster: /results/memory_profiling_tab_err/numeric
+  name: num-mem-results   # Directory on cluster: /results/memory_profiling_tab_err/numeric
 spec:
   template:
     spec:
       restartPolicy: Never
       containers:
-        - name: mem-profile-numeric
-          image: registry.datexis.com/nich1834/alloc-numeric:latest
+        - name: num-mem-results
+          image: registry.datexis.com/nich1834/alloc-numeric-small:latest
           imagePullPolicy: Always
           resources:
             requests:
