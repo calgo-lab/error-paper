@@ -67,7 +67,7 @@ def timing_function(func: callable, *args, runs: int = 10, **kwargs) -> tuple[li
 def memory_function(func: callable, *args, runs: int = 10, experiment_name: str = "", **kwargs) -> tuple[list[float], list[float], float, float]:
     """Uses memray to get memory allocations of func call. Returns nothing, saves the result to the .bin file."""
     for r in range(runs):
-        with memray.Tracker(f"../results/string/{experiment_name}-{r}.bin"):
+        with memray.Tracker(f"results/string/{experiment_name}-{r}.bin"):
             func(*args, **kwargs)
 
 
@@ -165,7 +165,7 @@ def time_one_error_model_string(desc_string: str, e_mech: error_mechanism, e_typ
 
 
 # This boi is a monster - test it out with max_n = 100, runs = 2 (need to calc variance)
-def time_tab_err_string(runs: int = 100, seed: int | None = 42, write_path: str = "../results/string_times.csv") -> pd.DataFrame:  # noqa: E501
+def time_tab_err_string(runs: int = 100, seed: int | None = 42, write_path: str = "results/string_times.csv") -> pd.DataFrame:  # noqa: E501
     """Times the tab error library for all combinations of error mechanism/model.
 
     Description:

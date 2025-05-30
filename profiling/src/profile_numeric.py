@@ -65,7 +65,7 @@ def timing_function(func: callable, *args, runs: int = 10, **kwargs) -> tuple[li
 def memory_function(func: callable, *args, runs: int = 10, experiment_name: str = "", **kwargs) -> tuple[list[float], list[float], float, float]:
     """Uses memray to get memory allocations of func call. Returns nothing, saves the result to the .bin file."""
     for r in range(runs):
-        with memray.Tracker(f"../results/numeric/{experiment_name}-{r}.bin"):
+        with memray.Tracker(f"results/numeric/{experiment_name}-{r}.bin"):
             func(*args, **kwargs)
 
 
