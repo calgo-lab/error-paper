@@ -26,4 +26,4 @@ The profiling plots used in the paper are available in the `plots` directory. Th
 
 ## Comments on Hardware
 
-Our results were obtained from the BHT Berlin compute cluster with 32000m CPU and 16Gb RAM used for each data type though only one process and one core was used per instance of runtime and memory profile. Further system specifications are in the paper.
+Our results were obtained from the BHT Berlin compute cluster with 32000m CPU and 16Gb RAM used for each data type though only one process and one core was used per instance of runtime and memory profile. Further system specifications are available in the paper and upon request.
