@@ -55,11 +55,11 @@ def get_data(directory):
 
 def main():
     print("Entry")
-    directory = "/results/memory_profiling_tab_err/reduced_string"
+    directory = "../results/string"
     data = get_data(directory)
     print("Data: ", data[:5])
     # Write to JSON
-    with open("/results/memory_profiling_tab_err/reduced_string_mem_result.json", "w") as f:
+    with open("../results/string_mem_result.json", "w") as f:
         json.dump(data, f, indent=2)
     print("write complete")
 
