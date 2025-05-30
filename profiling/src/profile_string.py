@@ -11,7 +11,6 @@ import psutil
 import numpy as np
 import pandas as pd
 from tab_err import error_mechanism, error_type
-from tab_err.error_type import ErrorTypeConfig
 from tab_err.api import low_level
 import memray
 from concurrent.futures import ProcessPoolExecutor, as_completed
