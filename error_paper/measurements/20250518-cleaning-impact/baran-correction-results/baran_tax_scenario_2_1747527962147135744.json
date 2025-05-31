@@ -1,0 +1,1 @@
+[{"dataset_name": "tax", "scenario": "scenario", "version": "2", "error_detection_mode": "raha", "precision": 0.11456406461955851, "recall": 0.09071084494206484, "f1": 0.10125156672903307, "runtime": 2506.5894305706024}]

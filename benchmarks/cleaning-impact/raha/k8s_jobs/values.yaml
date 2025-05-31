@@ -1,0 +1,241 @@
+experiments:
+- dataset: beers
+  scenarios:
+  - name: original
+    versions:
+    - ''
+  - name: missing_ecar
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+  - name: scenario
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+- dataset: bridges
+  scenarios:
+  - name: original
+    versions:
+    - ''
+  - name: missing_ecar
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+  - name: scenario
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+- dataset: cars
+  scenarios:
+  - name: original
+    versions:
+    - ''
+  - name: missing_ecar
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+  - name: scenario
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+- dataset: flights
+  scenarios:
+  - name: original
+    versions:
+    - ''
+  - name: missing_ecar
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+  - name: scenario
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+- dataset: food
+  scenarios:
+  - name: original
+    versions:
+    - ''
+  - name: missing_ecar
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+  - name: scenario
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+- dataset: rayyan
+  scenarios:
+  - name: original
+    versions:
+    - ''
+  - name: missing_ecar
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+  - name: scenario
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+- dataset: restaurant
+  scenarios:
+  - name: original
+    versions:
+    - ''
+  - name: missing_ecar
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+  - name: scenario
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+- dataset: tax
+  scenarios:
+  - name: original
+    versions:
+    - ''
+  - name: missing_ecar
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+  - name: scenario
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+image:
+  repository: larmor27/raha
+  tag: latest
+volumes:
+  dataPVC: cleaning-impact-data-baran
+  dataMountPath: /app/datasets
+  resultsPVC: cleaning-impact-results
+  resultsMountPath: /app/results

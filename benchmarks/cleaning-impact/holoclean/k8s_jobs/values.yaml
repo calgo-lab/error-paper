@@ -1,0 +1,29 @@
+experiments:
+- dataset: beers
+  scenarios:
+  - name: missing_ecar
+    versions:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+  memory: 256Gi
+image:
+  repository: larmor27/hc36
+  tag: latest
+postgres:
+  image: postgres:11
+  user: holocleanuser
+  password: abcd1234
+  database: holo
+volumes:
+  dataPVC: cleaning-impact-data
+  dataMountPath: /home/data
+  resultsPVC: cleaning-impact-results
+  resultsMountPath: /home/results

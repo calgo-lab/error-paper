@@ -1,0 +1,17 @@
+DATASET: breast-cancer-wisconsin.csv
+number of rows: 698
+number of columns: 11
+
+THRESHOLDS = [4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0]
+Number of tuple pairs: 243951
+
+Start: 4:30:4
+
+Preprocessing...
+
+Time for the creation of the matrix: 3931msec
+Matrix Rows 67.044    Duplicated 176.198    Skipped 709
+fastutil.hashmap size 67.044
+3 seconds
+Writing....
+Memory Consumption: 487MB
