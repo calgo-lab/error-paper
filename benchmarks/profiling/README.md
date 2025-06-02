@@ -2,7 +2,7 @@
 
 ## Quickstart Guide (To get plots from the paper):
 
-In the `profiling` directory do the following:
+In the `profiling/` directory do the following:
 
 1. Generate profiling results: `poetry run -- python3 src/profile/profile_numeric.py` and `poetry run -- python3 src/profile/profile_string.py`
 
