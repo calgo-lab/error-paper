@@ -1,1 +1,0 @@
-[{"dataset_name": "restaurant", "scenario": "missing_ecar", "version": "2", "error_detection_mode": "raha", "precision": 0.39344262295081966, "recall": 0.3096774193548387, "f1": 0.34657039711191334, "runtime": 574.4271681308746}]

@@ -1,1 +1,0 @@
-[{"dataset_name": "beers", "scenario": "scenario", "version": "7", "error_detection_mode": "raha", "precision": 0.8313912009512485, "recall": 0.801467216872994, "f1": 0.8161550134236022, "runtime": 721.7743253707886}]
