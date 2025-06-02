@@ -8,7 +8,7 @@ This code corresponds to the downstream effect of [`tab_err`](https://github.com
 
 1. In `datasets/` directory, run `python3 download_datasets.py`
 
-2. In `generate_results`, run `python3 <experiment-name>.py`
+2. In `generate_results/`, run `python3 <experiment-name>.py`
 
 3. Run notebook cells to obtain visualizations.
 
