@@ -6,7 +6,7 @@ This code corresponds to the downstream effect of [`tab_err`](https://github.com
 
 ## To get results, per experiment
 
-1. In `datasets` directory, run `python3 download_datasets.py`
+1. In `datasets/` directory, run `python3 download_datasets.py`
 
 2. In `generate_results`, run `python3 <experiment-name>.py`
 
