@@ -1,1 +1,0 @@
-[{"dataset_name": "tax", "scenario": "missing_ecar", "version": "9", "error_detection_mode": "raha", "precision": 0.570996598210911, "recall": 0.2946971421139903, "f1": 0.3887542621860994, "runtime": 3263.333961725235}]

@@ -1,1 +1,0 @@
-[{"dataset_name": "cars", "scenario": "scenario", "version": "6", "error_detection_mode": "raha", "precision": 0.16460176991150444, "recall": 0.11341463414634147, "f1": 0.13429602888086645, "runtime": 402.69032764434814}]

@@ -1,1 +1,0 @@
-[{"dataset_name": "flights", "scenario": "missing_ecar", "version": "4", "error_detection_mode": "raha", "precision": 1.0, "recall": 1.0, "f1": 1.0, "runtime": 319.67635011672974}]

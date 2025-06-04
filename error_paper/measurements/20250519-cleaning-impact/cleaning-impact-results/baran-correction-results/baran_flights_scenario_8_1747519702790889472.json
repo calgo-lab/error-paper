@@ -1,1 +1,0 @@
-[{"dataset_name": "flights", "scenario": "scenario", "version": "8", "error_detection_mode": "raha", "precision": 0.5687311178247734, "recall": 0.1530798942874568, "f1": 0.241230177799135, "runtime": 560.0474026203156}]

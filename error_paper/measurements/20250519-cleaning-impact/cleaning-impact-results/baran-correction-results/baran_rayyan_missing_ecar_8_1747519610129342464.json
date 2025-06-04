@@ -1,1 +1,0 @@
-[{"dataset_name": "rayyan", "scenario": "missing_ecar", "version": "8", "error_detection_mode": "raha", "precision": 0.15357561547479484, "recall": 0.13818565400843882, "f1": 0.14547473625763466, "runtime": 257.4616141319275}]

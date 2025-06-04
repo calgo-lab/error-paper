@@ -1,1 +1,0 @@
-[{"dataset_name": "beers", "scenario": "missing_ecar", "version": "8", "error_detection_mode": "raha", "precision": 0.9171171171171171, "recall": 0.1166895919303072, "f1": 0.20703681106365668, "runtime": 271.48221158981323}]
