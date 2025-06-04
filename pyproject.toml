@@ -12,8 +12,15 @@ jupyter = "^1.0.0"
 pyarrow = "^16.1.0"
 matplotlib = "^3.9.2"
 seaborn = "^0.13.2"
-tab-err = "^0.2.0"
+tab-err = "^0.1.1"
+ipykernel = "^6.29.5"
+memray = "^1.17.2"
+openml = "^0.15.1"
+psutil = "^7.0.0"
 
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
 
 [build-system]
 requires = ["poetry-core"]
