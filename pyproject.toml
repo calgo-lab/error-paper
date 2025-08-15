@@ -17,7 +17,7 @@ ipykernel = "^6.29.5"
 memray = "^1.17.2"
 openml = "^0.15.1"
 psutil = "^7.0.0"
-
+brokenaxes = "^0.6.1"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.5"
