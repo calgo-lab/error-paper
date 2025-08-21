@@ -1,0 +1,67 @@
+Here I'll record pretty much what I did to set it up.
+
+# Set up postgresql DB
+
+0. Get the bitnami repo
+helm repo add bitnami https://charts.bitnami.com/bitnami
+
+1. Create the DB with helm
+helm install bart-postgres bitnami/postgresql \
+  --set image.repository=bitnami/postgresql \
+  --set image.tag=11.21.0-debian-11-r0 \
+  --set global.postgresql.auth.postgresPassword=yourpassword
+
+2. Do port forwarding (from another terminal instance)
+kubectl port-forward svc/bart-postgres-postgresql 5432:5432
+
+3. Get dependencies on host
+sudo apt install postgresql-client-common
+sudo apt install postgresql-client
+
+4. Get into DB from local machine
+PGPASSWORD=yourpassword psql -h 127.0.0.1 -U postgres -d postgres -p 5432
+
+5. Create Schema (from postgresql prompt on local machine)
+postgres=# CREATE TABLE hosp (
+    index_id SERIAL PRIMARY KEY,
+    ProviderNumber INT,
+    HospitalName TEXT,
+    Address1 TEXT,
+    Address2 TEXT,
+    Address3 TEXT,
+    City TEXT,
+    State CHAR(2),
+    ZipCode VARCHAR(10),
+    CountyName TEXT,
+    PhoneNumber VARCHAR(15),
+    HospitalType TEXT,
+    HospitalOwner TEXT,
+    EmergencyService BOOLEAN,
+    Condition TEXT,
+    MeasureCode TEXT,
+    MeasureName TEXT,
+    Score TEXT,
+    Sample TEXT,
+    StateAverage TEXT
+);
+
+6. Read in data from local machine using '\copy' (from postgresql prompt on local machine)
+postgres=# \copy hosp(index_id, ProviderNumber,HospitalName,Address1,Address2,Address3,City,State,ZipCode,CountyName,PhoneNumber,HospitalType,HospitalOwner,EmergencyService,Condition,MeasureCode,MeasureName,Score,Sample,StateAverage)
+FROM '/home/chandlernick/BHT/Research/error-paper/data/hospital/clean.csv' CSV HEADER;
+COPY 1000
+
+7. Test it (from postgresql prompt on local machine)
+postgres=# SELECT * FROM hosp;
+
+---
+
+# Set up BART: https://github.com/dbunibas/BART
+
+8. 
+
+
+
+
+
+
+
