@@ -45,3 +45,10 @@ def verify_error_pct(clean_path: str, dirty_path: str, error_pct: dict):
     pct_observed = (df_dirty != df_clean).sum() / df_dirty.shape[0]
     pct_deviation = (pct_observed - error_pct).sum()
     print(f'{Path(dirty_path).name} deviates from intended error_pct by absolute {abs(pct_deviation * 100)}%.')
+
+def save_clean_dirty(df_clean, df_dirty, dataset_name):
+    export_dir = Path(f"../export_data/{dataset_name}")
+    export_dir.mkdir(parents=True, exist_ok=True)
+
+    df_clean.to_csv(export_dir / "clean.csv", index=False)
+    df_dirty.to_csv(export_dir / f"{dataset_name}_original.csv", index=False)
