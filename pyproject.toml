@@ -18,6 +18,7 @@ memray = "^1.17.2"
 openml = "^0.15.1"
 psutil = "^7.0.0"
 brokenaxes = "^0.6.1"
+desbordante = "^2.3.2"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.5"

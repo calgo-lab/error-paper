@@ -1,0 +1,972 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<task>
+    <target> 
+        <type>DBMS</type>
+        <access-configuration>
+            <driver>org.postgresql.Driver</driver>
+            <uri>jdbc:postgresql://127.0.0.1:5432/postgres</uri>
+            <schema>public</schema>
+            <login>postgres</login>
+            <password>yourpassword</password>
+        </access-configuration>
+        <import>
+            <input type="csv" separator="," table="hosp">/home/chandlernick/BHT/Research/error-paper/data/hospital/clean.csv</input>
+        </import>
+    </target>
+
+    <dependencies>
+<![CDATA[
+DCs:
+e1: person(index: $a1, Sample: $b1), person(index: $a2, Sample: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e2: person(index: $a1, Score: $b1), person(index: $a2, Score: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e3: person(index: $a1, StateAverage: $b1), person(index: $a2, StateAverage: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e4: person(index: $a1, PhoneNumber: $b1), person(index: $a2, PhoneNumber: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e5: person(index: $a1, Address1: $b1), person(index: $a2, Address1: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e6: person(index: $a1, HospitalName: $b1), person(index: $a2, HospitalName: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e7: person(index: $a1, ProviderNumber: $b1), person(index: $a2, ProviderNumber: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e8: person(index: $a1, ZipCode: $b1), person(index: $a2, ZipCode: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e9: person(index: $a1, City: $b1), person(index: $a2, City: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e10: person(index: $a1, CountyName: $b1), person(index: $a2, CountyName: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e11: person(index: $a1, MeasureCode: $b1), person(index: $a2, MeasureCode: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e12: person(index: $a1, MeasureName: $b1), person(index: $a2, MeasureName: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e13: person(index: $a1, HospitalOwner: $b1), person(index: $a2, HospitalOwner: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e14: person(index: $a1, Condition: $b1), person(index: $a2, Condition: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e15: person(index: $a1, State: $b1), person(index: $a2, State: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e16: person(index: $a1, EmergencyService: $b1), person(index: $a2, EmergencyService: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e17: person(City: $a1, HospitalOwner: $b1, Score: $c1, Sample: $d1, PhoneNumber: $e1), person(City: $a2, HospitalOwner: $b2, Score: $c2, Sample: $d2, PhoneNumber: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e18: person(City: $a1, HospitalOwner: $b1, Score: $c1, Sample: $d1, Address1: $e1), person(City: $a2, HospitalOwner: $b2, Score: $c2, Sample: $d2, Address1: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e19: person(City: $a1, HospitalOwner: $b1, Score: $c1, Sample: $d1, HospitalName: $e1), person(City: $a2, HospitalOwner: $b2, Score: $c2, Sample: $d2, HospitalName: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e20: person(City: $a1, HospitalOwner: $b1, Score: $c1, Sample: $d1, ProviderNumber: $e1), person(City: $a2, HospitalOwner: $b2, Score: $c2, Sample: $d2, ProviderNumber: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e21: person(City: $a1, HospitalOwner: $b1, Score: $c1, Sample: $d1, ZipCode: $e1), person(City: $a2, HospitalOwner: $b2, Score: $c2, Sample: $d2, ZipCode: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e22: person(EmergencyService: $a1, MeasureCode: $b1, Score: $c1, Sample: $d1, StateAverage: $e1), person(EmergencyService: $a2, MeasureCode: $b2, Score: $c2, Sample: $d2, StateAverage: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e23: person(EmergencyService: $a1, MeasureCode: $b1, Score: $c1, Sample: $d1, State: $e1), person(EmergencyService: $a2, MeasureCode: $b2, Score: $c2, Sample: $d2, State: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e24: person(EmergencyService: $a1, MeasureName: $b1, Score: $c1, Sample: $d1, StateAverage: $e1), person(EmergencyService: $a2, MeasureName: $b2, Score: $c2, Sample: $d2, StateAverage: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e25: person(EmergencyService: $a1, MeasureName: $b1, Score: $c1, Sample: $d1, State: $e1), person(EmergencyService: $a2, MeasureName: $b2, Score: $c2, Sample: $d2, State: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e26: person(HospitalOwner: $a1, Condition: $b1, Score: $c1, Sample: $d1, State: $e1), person(HospitalOwner: $a2, Condition: $b2, Score: $c2, Sample: $d2, State: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e27: person(HospitalOwner: $a1, EmergencyService: $b1, Score: $c1, Sample: $d1, State: $e1), person(HospitalOwner: $a2, EmergencyService: $b2, Score: $c2, Sample: $d2, State: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e28: person(EmergencyService: $a1, Condition: $b1, Score: $c1, Sample: $d1, State: $e1), person(EmergencyService: $a2, Condition: $b2, Score: $c2, Sample: $d2, State: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e29: person(ZipCode: $a1, Sample: $b1, StateAverage: $c1, index: $d1), person(ZipCode: $a2, Sample: $b2, StateAverage: $c2, index: $d2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 != $d2 -> #fail.
+e30: person(ZipCode: $a1, Sample: $b1, StateAverage: $c1, Score: $d1), person(ZipCode: $a2, Sample: $b2, StateAverage: $c2, Score: $d2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 != $d2 -> #fail.
+e31: person(City: $a1, HospitalOwner: $b1, Sample: $c1, StateAverage: $d1, index: $e1), person(City: $a2, HospitalOwner: $b2, Sample: $c2, StateAverage: $d2, index: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e32: person(City: $a1, HospitalOwner: $b1, Sample: $c1, StateAverage: $d1, Score: $e1), person(City: $a2, HospitalOwner: $b2, Sample: $c2, StateAverage: $d2, Score: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e33: person(City: $a1, HospitalOwner: $b1, Sample: $c1, StateAverage: $d1, PhoneNumber: $e1), person(City: $a2, HospitalOwner: $b2, Sample: $c2, StateAverage: $d2, PhoneNumber: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e34: person(City: $a1, HospitalOwner: $b1, Sample: $c1, StateAverage: $d1, Address1: $e1), person(City: $a2, HospitalOwner: $b2, Sample: $c2, StateAverage: $d2, Address1: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e35: person(City: $a1, HospitalOwner: $b1, Sample: $c1, StateAverage: $d1, HospitalName: $e1), person(City: $a2, HospitalOwner: $b2, Sample: $c2, StateAverage: $d2, HospitalName: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e36: person(City: $a1, HospitalOwner: $b1, Sample: $c1, StateAverage: $d1, ProviderNumber: $e1), person(City: $a2, HospitalOwner: $b2, Sample: $c2, StateAverage: $d2, ProviderNumber: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e37: person(City: $a1, HospitalOwner: $b1, Sample: $c1, StateAverage: $d1, ZipCode: $e1), person(City: $a2, HospitalOwner: $b2, Sample: $c2, StateAverage: $d2, ZipCode: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e38: person(ZipCode: $a1, Sample: $b1, PhoneNumber: $c1), person(ZipCode: $a2, Sample: $b2, PhoneNumber: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e39: person(ZipCode: $a1, Sample: $b1, Address1: $c1), person(ZipCode: $a2, Sample: $b2, Address1: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e40: person(ZipCode: $a1, Sample: $b1, HospitalName: $c1), person(ZipCode: $a2, Sample: $b2, HospitalName: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e41: person(ZipCode: $a1, Sample: $b1, ProviderNumber: $c1), person(ZipCode: $a2, Sample: $b2, ProviderNumber: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e42: person(ZipCode: $a1, Sample: $b1, HospitalOwner: $c1), person(ZipCode: $a2, Sample: $b2, HospitalOwner: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e43: person(ZipCode: $a1, MeasureCode: $b1, Sample: $c1, index: $d1), person(ZipCode: $a2, MeasureCode: $b2, Sample: $c2, index: $d2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 != $d2 -> #fail.
+e44: person(ZipCode: $a1, MeasureCode: $b1, Sample: $c1, Score: $d1), person(ZipCode: $a2, MeasureCode: $b2, Sample: $c2, Score: $d2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 != $d2 -> #fail.
+e45: person(ZipCode: $a1, MeasureName: $b1, Sample: $c1, index: $d1), person(ZipCode: $a2, MeasureName: $b2, Sample: $c2, index: $d2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 != $d2 -> #fail.
+e46: person(ZipCode: $a1, MeasureName: $b1, Sample: $c1, Score: $d1), person(ZipCode: $a2, MeasureName: $b2, Sample: $c2, Score: $d2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 != $d2 -> #fail.
+e47: person(City: $a1, HospitalOwner: $b1, MeasureCode: $c1, Sample: $d1, index: $e1), person(City: $a2, HospitalOwner: $b2, MeasureCode: $c2, Sample: $d2, index: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e48: person(City: $a1, HospitalOwner: $b1, MeasureCode: $c1, Sample: $d1, Score: $e1), person(City: $a2, HospitalOwner: $b2, MeasureCode: $c2, Sample: $d2, Score: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e49: person(City: $a1, HospitalOwner: $b1, MeasureCode: $c1, Sample: $d1, PhoneNumber: $e1), person(City: $a2, HospitalOwner: $b2, MeasureCode: $c2, Sample: $d2, PhoneNumber: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e50: person(City: $a1, HospitalOwner: $b1, MeasureCode: $c1, Sample: $d1, Address1: $e1), person(City: $a2, HospitalOwner: $b2, MeasureCode: $c2, Sample: $d2, Address1: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e51: person(City: $a1, HospitalOwner: $b1, MeasureCode: $c1, Sample: $d1, HospitalName: $e1), person(City: $a2, HospitalOwner: $b2, MeasureCode: $c2, Sample: $d2, HospitalName: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e52: person(City: $a1, HospitalOwner: $b1, MeasureCode: $c1, Sample: $d1, ProviderNumber: $e1), person(City: $a2, HospitalOwner: $b2, MeasureCode: $c2, Sample: $d2, ProviderNumber: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e53: person(City: $a1, HospitalOwner: $b1, MeasureCode: $c1, Sample: $d1, ZipCode: $e1), person(City: $a2, HospitalOwner: $b2, MeasureCode: $c2, Sample: $d2, ZipCode: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e54: person(City: $a1, HospitalOwner: $b1, MeasureName: $c1, Sample: $d1, index: $e1), person(City: $a2, HospitalOwner: $b2, MeasureName: $c2, Sample: $d2, index: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e55: person(City: $a1, HospitalOwner: $b1, MeasureName: $c1, Sample: $d1, Score: $e1), person(City: $a2, HospitalOwner: $b2, MeasureName: $c2, Sample: $d2, Score: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e56: person(City: $a1, HospitalOwner: $b1, MeasureName: $c1, Sample: $d1, PhoneNumber: $e1), person(City: $a2, HospitalOwner: $b2, MeasureName: $c2, Sample: $d2, PhoneNumber: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e57: person(City: $a1, HospitalOwner: $b1, MeasureName: $c1, Sample: $d1, Address1: $e1), person(City: $a2, HospitalOwner: $b2, MeasureName: $c2, Sample: $d2, Address1: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e58: person(City: $a1, HospitalOwner: $b1, MeasureName: $c1, Sample: $d1, HospitalName: $e1), person(City: $a2, HospitalOwner: $b2, MeasureName: $c2, Sample: $d2, HospitalName: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e59: person(City: $a1, HospitalOwner: $b1, MeasureName: $c1, Sample: $d1, ProviderNumber: $e1), person(City: $a2, HospitalOwner: $b2, MeasureName: $c2, Sample: $d2, ProviderNumber: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e60: person(City: $a1, HospitalOwner: $b1, MeasureName: $c1, Sample: $d1, ZipCode: $e1), person(City: $a2, HospitalOwner: $b2, MeasureName: $c2, Sample: $d2, ZipCode: $e2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 == $d2, $e1 != $e2 -> #fail.
+e61: person(HospitalOwner: $a1, MeasureCode: $b1, Sample: $c1, StateAverage: $d1), person(HospitalOwner: $a2, MeasureCode: $b2, Sample: $c2, StateAverage: $d2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 != $d2 -> #fail.
+e62: person(HospitalOwner: $a1, MeasureCode: $b1, Sample: $c1, State: $d1), person(HospitalOwner: $a2, MeasureCode: $b2, Sample: $c2, State: $d2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 != $d2 -> #fail.
+e63: person(HospitalOwner: $a1, MeasureName: $b1, Sample: $c1, StateAverage: $d1), person(HospitalOwner: $a2, MeasureName: $b2, Sample: $c2, StateAverage: $d2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 != $d2 -> #fail.
+e64: person(HospitalOwner: $a1, MeasureName: $b1, Sample: $c1, State: $d1), person(HospitalOwner: $a2, MeasureName: $b2, Sample: $c2, State: $d2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 != $d2 -> #fail.
+e65: person(StateAverage: $a1, MeasureCode: $b1), person(StateAverage: $a2, MeasureCode: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e66: person(StateAverage: $a1, MeasureName: $b1), person(StateAverage: $a2, MeasureName: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e67: person(StateAverage: $a1, Condition: $b1), person(StateAverage: $a2, Condition: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e68: person(StateAverage: $a1, State: $b1), person(StateAverage: $a2, State: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e69: person(PhoneNumber: $a1, StateAverage: $b1, index: $c1), person(PhoneNumber: $a2, StateAverage: $b2, index: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e70: person(PhoneNumber: $a1, StateAverage: $b1, Sample: $c1), person(PhoneNumber: $a2, StateAverage: $b2, Sample: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e71: person(PhoneNumber: $a1, StateAverage: $b1, Score: $c1), person(PhoneNumber: $a2, StateAverage: $b2, Score: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e72: person(Address1: $a1, StateAverage: $b1, index: $c1), person(Address1: $a2, StateAverage: $b2, index: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e73: person(Address1: $a1, StateAverage: $b1, Sample: $c1), person(Address1: $a2, StateAverage: $b2, Sample: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e74: person(Address1: $a1, StateAverage: $b1, Score: $c1), person(Address1: $a2, StateAverage: $b2, Score: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e75: person(HospitalName: $a1, StateAverage: $b1, index: $c1), person(HospitalName: $a2, StateAverage: $b2, index: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e76: person(HospitalName: $a1, StateAverage: $b1, Sample: $c1), person(HospitalName: $a2, StateAverage: $b2, Sample: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e77: person(HospitalName: $a1, StateAverage: $b1, Score: $c1), person(HospitalName: $a2, StateAverage: $b2, Score: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e78: person(ProviderNumber: $a1, StateAverage: $b1, index: $c1), person(ProviderNumber: $a2, StateAverage: $b2, index: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e79: person(ProviderNumber: $a1, StateAverage: $b1, Sample: $c1), person(ProviderNumber: $a2, StateAverage: $b2, Sample: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e80: person(ProviderNumber: $a1, StateAverage: $b1, Score: $c1), person(ProviderNumber: $a2, StateAverage: $b2, Score: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e81: person(ZipCode: $a1, HospitalOwner: $b1, StateAverage: $c1, index: $d1), person(ZipCode: $a2, HospitalOwner: $b2, StateAverage: $c2, index: $d2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 != $d2 -> #fail.
+e82: person(ZipCode: $a1, HospitalOwner: $b1, StateAverage: $c1, Sample: $d1), person(ZipCode: $a2, HospitalOwner: $b2, StateAverage: $c2, Sample: $d2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 != $d2 -> #fail.
+e83: person(ZipCode: $a1, HospitalOwner: $b1, StateAverage: $c1, Score: $d1), person(ZipCode: $a2, HospitalOwner: $b2, StateAverage: $c2, Score: $d2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 != $d2 -> #fail.
+e84: person(PhoneNumber: $a1, Address1: $b1), person(PhoneNumber: $a2, Address1: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e85: person(PhoneNumber: $a1, HospitalName: $b1), person(PhoneNumber: $a2, HospitalName: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e86: person(PhoneNumber: $a1, ProviderNumber: $b1), person(PhoneNumber: $a2, ProviderNumber: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e87: person(PhoneNumber: $a1, ZipCode: $b1), person(PhoneNumber: $a2, ZipCode: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e88: person(PhoneNumber: $a1, City: $b1), person(PhoneNumber: $a2, City: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e89: person(PhoneNumber: $a1, CountyName: $b1), person(PhoneNumber: $a2, CountyName: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e90: person(PhoneNumber: $a1, HospitalOwner: $b1), person(PhoneNumber: $a2, HospitalOwner: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e91: person(PhoneNumber: $a1, State: $b1), person(PhoneNumber: $a2, State: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e92: person(PhoneNumber: $a1, EmergencyService: $b1), person(PhoneNumber: $a2, EmergencyService: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e93: person(PhoneNumber: $a1, MeasureCode: $b1, index: $c1), person(PhoneNumber: $a2, MeasureCode: $b2, index: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e94: person(PhoneNumber: $a1, MeasureCode: $b1, Sample: $c1), person(PhoneNumber: $a2, MeasureCode: $b2, Sample: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e95: person(PhoneNumber: $a1, MeasureCode: $b1, Score: $c1), person(PhoneNumber: $a2, MeasureCode: $b2, Score: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e96: person(PhoneNumber: $a1, MeasureCode: $b1, StateAverage: $c1), person(PhoneNumber: $a2, MeasureCode: $b2, StateAverage: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e97: person(PhoneNumber: $a1, MeasureName: $b1, index: $c1), person(PhoneNumber: $a2, MeasureName: $b2, index: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e98: person(PhoneNumber: $a1, MeasureName: $b1, Sample: $c1), person(PhoneNumber: $a2, MeasureName: $b2, Sample: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e99: person(PhoneNumber: $a1, MeasureName: $b1, Score: $c1), person(PhoneNumber: $a2, MeasureName: $b2, Score: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e100: person(PhoneNumber: $a1, MeasureName: $b1, StateAverage: $c1), person(PhoneNumber: $a2, MeasureName: $b2, StateAverage: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e101: person(Address1: $a1, PhoneNumber: $b1), person(Address1: $a2, PhoneNumber: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e102: person(Address1: $a1, HospitalName: $b1), person(Address1: $a2, HospitalName: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e103: person(Address1: $a1, ProviderNumber: $b1), person(Address1: $a2, ProviderNumber: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e104: person(Address1: $a1, ZipCode: $b1), person(Address1: $a2, ZipCode: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e105: person(Address1: $a1, City: $b1), person(Address1: $a2, City: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e106: person(Address1: $a1, CountyName: $b1), person(Address1: $a2, CountyName: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e107: person(Address1: $a1, HospitalOwner: $b1), person(Address1: $a2, HospitalOwner: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e108: person(Address1: $a1, State: $b1), person(Address1: $a2, State: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e109: person(Address1: $a1, EmergencyService: $b1), person(Address1: $a2, EmergencyService: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e110: person(Address1: $a1, MeasureCode: $b1, index: $c1), person(Address1: $a2, MeasureCode: $b2, index: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e111: person(Address1: $a1, MeasureCode: $b1, Sample: $c1), person(Address1: $a2, MeasureCode: $b2, Sample: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e112: person(Address1: $a1, MeasureCode: $b1, Score: $c1), person(Address1: $a2, MeasureCode: $b2, Score: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e113: person(Address1: $a1, MeasureCode: $b1, StateAverage: $c1), person(Address1: $a2, MeasureCode: $b2, StateAverage: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e114: person(Address1: $a1, MeasureName: $b1, index: $c1), person(Address1: $a2, MeasureName: $b2, index: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e115: person(Address1: $a1, MeasureName: $b1, Sample: $c1), person(Address1: $a2, MeasureName: $b2, Sample: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e116: person(Address1: $a1, MeasureName: $b1, Score: $c1), person(Address1: $a2, MeasureName: $b2, Score: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e117: person(Address1: $a1, MeasureName: $b1, StateAverage: $c1), person(Address1: $a2, MeasureName: $b2, StateAverage: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e118: person(HospitalName: $a1, PhoneNumber: $b1), person(HospitalName: $a2, PhoneNumber: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e119: person(HospitalName: $a1, Address1: $b1), person(HospitalName: $a2, Address1: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e120: person(HospitalName: $a1, ProviderNumber: $b1), person(HospitalName: $a2, ProviderNumber: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e121: person(HospitalName: $a1, ZipCode: $b1), person(HospitalName: $a2, ZipCode: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e122: person(HospitalName: $a1, City: $b1), person(HospitalName: $a2, City: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e123: person(HospitalName: $a1, CountyName: $b1), person(HospitalName: $a2, CountyName: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e124: person(HospitalName: $a1, HospitalOwner: $b1), person(HospitalName: $a2, HospitalOwner: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e125: person(HospitalName: $a1, State: $b1), person(HospitalName: $a2, State: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e126: person(HospitalName: $a1, EmergencyService: $b1), person(HospitalName: $a2, EmergencyService: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e127: person(HospitalName: $a1, MeasureCode: $b1, index: $c1), person(HospitalName: $a2, MeasureCode: $b2, index: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e128: person(HospitalName: $a1, MeasureCode: $b1, Sample: $c1), person(HospitalName: $a2, MeasureCode: $b2, Sample: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e129: person(HospitalName: $a1, MeasureCode: $b1, Score: $c1), person(HospitalName: $a2, MeasureCode: $b2, Score: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e130: person(HospitalName: $a1, MeasureCode: $b1, StateAverage: $c1), person(HospitalName: $a2, MeasureCode: $b2, StateAverage: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e131: person(HospitalName: $a1, MeasureName: $b1, index: $c1), person(HospitalName: $a2, MeasureName: $b2, index: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e132: person(HospitalName: $a1, MeasureName: $b1, Sample: $c1), person(HospitalName: $a2, MeasureName: $b2, Sample: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e133: person(HospitalName: $a1, MeasureName: $b1, Score: $c1), person(HospitalName: $a2, MeasureName: $b2, Score: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e134: person(HospitalName: $a1, MeasureName: $b1, StateAverage: $c1), person(HospitalName: $a2, MeasureName: $b2, StateAverage: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e135: person(ProviderNumber: $a1, PhoneNumber: $b1), person(ProviderNumber: $a2, PhoneNumber: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e136: person(ProviderNumber: $a1, Address1: $b1), person(ProviderNumber: $a2, Address1: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e137: person(ProviderNumber: $a1, HospitalName: $b1), person(ProviderNumber: $a2, HospitalName: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e138: person(ProviderNumber: $a1, ZipCode: $b1), person(ProviderNumber: $a2, ZipCode: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e139: person(ProviderNumber: $a1, City: $b1), person(ProviderNumber: $a2, City: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e140: person(ProviderNumber: $a1, CountyName: $b1), person(ProviderNumber: $a2, CountyName: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e141: person(ProviderNumber: $a1, HospitalOwner: $b1), person(ProviderNumber: $a2, HospitalOwner: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e142: person(ProviderNumber: $a1, State: $b1), person(ProviderNumber: $a2, State: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e143: person(ProviderNumber: $a1, EmergencyService: $b1), person(ProviderNumber: $a2, EmergencyService: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e144: person(ProviderNumber: $a1, MeasureCode: $b1, index: $c1), person(ProviderNumber: $a2, MeasureCode: $b2, index: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e145: person(ProviderNumber: $a1, MeasureCode: $b1, Sample: $c1), person(ProviderNumber: $a2, MeasureCode: $b2, Sample: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e146: person(ProviderNumber: $a1, MeasureCode: $b1, Score: $c1), person(ProviderNumber: $a2, MeasureCode: $b2, Score: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e147: person(ProviderNumber: $a1, MeasureCode: $b1, StateAverage: $c1), person(ProviderNumber: $a2, MeasureCode: $b2, StateAverage: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e148: person(ProviderNumber: $a1, MeasureName: $b1, index: $c1), person(ProviderNumber: $a2, MeasureName: $b2, index: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e149: person(ProviderNumber: $a1, MeasureName: $b1, Sample: $c1), person(ProviderNumber: $a2, MeasureName: $b2, Sample: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e150: person(ProviderNumber: $a1, MeasureName: $b1, Score: $c1), person(ProviderNumber: $a2, MeasureName: $b2, Score: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e151: person(ProviderNumber: $a1, MeasureName: $b1, StateAverage: $c1), person(ProviderNumber: $a2, MeasureName: $b2, StateAverage: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e152: person(ZipCode: $a1, City: $b1), person(ZipCode: $a2, City: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e153: person(ZipCode: $a1, CountyName: $b1), person(ZipCode: $a2, CountyName: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e154: person(ZipCode: $a1, State: $b1), person(ZipCode: $a2, State: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e155: person(ZipCode: $a1, EmergencyService: $b1), person(ZipCode: $a2, EmergencyService: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e156: person(ZipCode: $a1, MeasureCode: $b1, StateAverage: $c1), person(ZipCode: $a2, MeasureCode: $b2, StateAverage: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e157: person(ZipCode: $a1, HospitalOwner: $b1, MeasureCode: $c1, index: $d1), person(ZipCode: $a2, HospitalOwner: $b2, MeasureCode: $c2, index: $d2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 != $d2 -> #fail.
+e158: person(ZipCode: $a1, HospitalOwner: $b1, MeasureCode: $c1, Sample: $d1), person(ZipCode: $a2, HospitalOwner: $b2, MeasureCode: $c2, Sample: $d2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 != $d2 -> #fail.
+e159: person(ZipCode: $a1, HospitalOwner: $b1, MeasureCode: $c1, Score: $d1), person(ZipCode: $a2, HospitalOwner: $b2, MeasureCode: $c2, Score: $d2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 != $d2 -> #fail.
+e160: person(ZipCode: $a1, MeasureName: $b1, StateAverage: $c1), person(ZipCode: $a2, MeasureName: $b2, StateAverage: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e161: person(ZipCode: $a1, HospitalOwner: $b1, MeasureName: $c1, index: $d1), person(ZipCode: $a2, HospitalOwner: $b2, MeasureName: $c2, index: $d2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 != $d2 -> #fail.
+e162: person(ZipCode: $a1, HospitalOwner: $b1, MeasureName: $c1, Sample: $d1), person(ZipCode: $a2, HospitalOwner: $b2, MeasureName: $c2, Sample: $d2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 != $d2 -> #fail.
+e163: person(ZipCode: $a1, HospitalOwner: $b1, MeasureName: $c1, Score: $d1), person(ZipCode: $a2, HospitalOwner: $b2, MeasureName: $c2, Score: $d2), $a1 == $a2, $b1 == $b2, $c1 == $c2, $d1 != $d2 -> #fail.
+e164: person(ZipCode: $a1, HospitalOwner: $b1, PhoneNumber: $c1), person(ZipCode: $a2, HospitalOwner: $b2, PhoneNumber: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e165: person(ZipCode: $a1, HospitalOwner: $b1, Address1: $c1), person(ZipCode: $a2, HospitalOwner: $b2, Address1: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e166: person(ZipCode: $a1, HospitalOwner: $b1, HospitalName: $c1), person(ZipCode: $a2, HospitalOwner: $b2, HospitalName: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e167: person(ZipCode: $a1, HospitalOwner: $b1, ProviderNumber: $c1), person(ZipCode: $a2, HospitalOwner: $b2, ProviderNumber: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e168: person(City: $a1, CountyName: $b1), person(City: $a2, CountyName: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e169: person(City: $a1, State: $b1), person(City: $a2, State: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e170: person(City: $a1, EmergencyService: $b1), person(City: $a2, EmergencyService: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e171: person(City: $a1, MeasureCode: $b1, StateAverage: $c1), person(City: $a2, MeasureCode: $b2, StateAverage: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e172: person(City: $a1, MeasureName: $b1, StateAverage: $c1), person(City: $a2, MeasureName: $b2, StateAverage: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e173: person(CountyName: $a1, State: $b1), person(CountyName: $a2, State: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e174: person(CountyName: $a1, EmergencyService: $b1), person(CountyName: $a2, EmergencyService: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e175: person(CountyName: $a1, MeasureCode: $b1, StateAverage: $c1), person(CountyName: $a2, MeasureCode: $b2, StateAverage: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e176: person(CountyName: $a1, MeasureName: $b1, StateAverage: $c1), person(CountyName: $a2, MeasureName: $b2, StateAverage: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e177: person(MeasureCode: $a1, MeasureName: $b1), person(MeasureCode: $a2, MeasureName: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e178: person(MeasureCode: $a1, Condition: $b1), person(MeasureCode: $a2, Condition: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e179: person(State: $a1, MeasureCode: $b1, StateAverage: $c1), person(State: $a2, MeasureCode: $b2, StateAverage: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+e180: person(MeasureName: $a1, MeasureCode: $b1), person(MeasureName: $a2, MeasureCode: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e181: person(MeasureName: $a1, Condition: $b1), person(MeasureName: $a2, Condition: $b2), $a1 == $a2, $b1 != $b2 -> #fail.
+e182: person(State: $a1, MeasureName: $b1, StateAverage: $c1), person(State: $a2, MeasureName: $b2, StateAverage: $c2), $a1 == $a2, $b1 == $b2, $c1 != $c2 -> #fail.
+]]>
+    </dependencies>
+
+    <configuration>
+        <printLog>true</printLog>
+        <recreateDBOnStart>false</recreateDBOnStart>
+        <applyCellChanges>true</applyCellChanges>
+        <cloneTargetSchema>true</cloneTargetSchema>
+        <cloneSuffix>_dirty</cloneSuffix>
+        <exportDirtyDB>true</exportDirtyDB>
+        <exportDirtyDBPath>/home/chandlernick/BHT/Research/error-paper/benchmarks/ic-baseline/output/</exportDirtyDBPath>
+        <exportDirtyDBType>CSV</exportDirtyDBType>
+        <exportCellChanges>true</exportCellChanges>
+        <exportCellChangesPath>/home/chandlernick/BHT/Research/error-paper/benchmarks/ic-baseline/output/changes.csv</exportCellChangesPath>
+        <estimateRepairability>true</estimateRepairability>
+        <useDeltaDBForChanges>true</useDeltaDBForChanges>
+        <avoidInteractions>true</avoidInteractions>
+        <checkChanges>true</checkChanges>
+        <generateAllChanges>false</generateAllChanges>
+
+        <!-- NEW BLOCKS TO ACTUALLY MAKE DATA DIRTY -->
+        <errorPercentages>
+            <defaultPercentage>0.25</defaultPercentage>
+    <vioGenQuery id="e1">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e2">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e3">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e4">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e5">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e6">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e7">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e8">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e9">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e10">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e11">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e12">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e13">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e14">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e15">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e16">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e17">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e18">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e19">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e20">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e21">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e22">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e23">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e24">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e25">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e26">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e27">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e28">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e29">
+        <comparison>($d1 != $d2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e30">
+        <comparison>($d1 != $d2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e31">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e32">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e33">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e34">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e35">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e36">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e37">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e38">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e39">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e40">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e41">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e42">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e43">
+        <comparison>($d1 != $d2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e44">
+        <comparison>($d1 != $d2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e45">
+        <comparison>($d1 != $d2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e46">
+        <comparison>($d1 != $d2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e47">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e48">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e49">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e50">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e51">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e52">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e53">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e54">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e55">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e56">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e57">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e58">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e59">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e60">
+        <comparison>($e1 != $e2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e61">
+        <comparison>($d1 != $d2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e62">
+        <comparison>($d1 != $d2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e63">
+        <comparison>($d1 != $d2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e64">
+        <comparison>($d1 != $d2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e65">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e66">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e67">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e68">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e69">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e70">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e71">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e72">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e73">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e74">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e75">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e76">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e77">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e78">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e79">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e80">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e81">
+        <comparison>($d1 != $d2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e82">
+        <comparison>($d1 != $d2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e83">
+        <comparison>($d1 != $d2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e84">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e85">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e86">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e87">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e88">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e89">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e90">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e91">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e92">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e93">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e94">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e95">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e96">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e97">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e98">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e99">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e100">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e101">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e102">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e103">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e104">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e105">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e106">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e107">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e108">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e109">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e110">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e111">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e112">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e113">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e114">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e115">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e116">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e117">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e118">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e119">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e120">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e121">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e122">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e123">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e124">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e125">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e126">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e127">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e128">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e129">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e130">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e131">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e132">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e133">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e134">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e135">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e136">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e137">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e138">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e139">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e140">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e141">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e142">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e143">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e144">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e145">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e146">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e147">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e148">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e149">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e150">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e151">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e152">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e153">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e154">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e155">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e156">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e157">
+        <comparison>($d1 != $d2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e158">
+        <comparison>($d1 != $d2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e159">
+        <comparison>($d1 != $d2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e160">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e161">
+        <comparison>($d1 != $d2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e162">
+        <comparison>($d1 != $d2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e163">
+        <comparison>($d1 != $d2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e164">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e165">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e166">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e167">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e168">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e169">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e170">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e171">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e172">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e173">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e174">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e175">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e176">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e177">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e178">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e179">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e180">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e181">
+        <comparison>($b1 != $b2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+    <vioGenQuery id="e182">
+        <comparison>($c1 != $c2)</comparison>
+        <percentage>1.0</percentage>
+    </vioGenQuery>
+        </errorPercentages>
+
+        <dirtyStrategies>
+            <defaultStrategy>
+                <strategy chars="*" charsToAdd="3">TypoAddString</strategy>
+            </defaultStrategy>
+        </dirtyStrategies>
+
+        <vioGenQueriesConfiguration>
+            <probabilityFactorForStandardQueries>0.5</probabilityFactorForStandardQueries>
+            <offsetFactorForStandardQueries>0.05</offsetFactorForStandardQueries>
+            <probabilityFactorForSymmetricQueries>0.5</probabilityFactorForSymmetricQueries>
+            <offsetFactorForSymmetricQueries>0.05</offsetFactorForSymmetricQueries>
+            <probabilityFactorForInequalityQueries>0.25</probabilityFactorForInequalityQueries>
+            <offsetFactorForInequalityQueries>0.05</offsetFactorForInequalityQueries>
+            <windowSizeFactorForInequalityQueries>1.5</windowSizeFactorForInequalityQueries>
+        </vioGenQueriesConfiguration>
+
+    </configuration>
+</task>

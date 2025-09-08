@@ -700,6 +700,43 @@ files = [
 ]
 
 [[package]]
+name = "desbordante"
+version = "2.3.2"
+description = "Science-intensive high-performance data profiler"
+optional = false
+python-versions = ">=3.8"
+groups = ["main"]
+files = [
+    {file = "desbordante-2.3.2-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:625a700a473885d4967a1cf511b9d237ca8549f3827d279885b2d752c6e936f7"},
+    {file = "desbordante-2.3.2-cp310-cp310-macosx_11_0_x86_64.whl", hash = "sha256:30b6170a943d991548cf11b3a12789bb884c7d38c405ce4f45d0c9d4fef70c2f"},
+    {file = "desbordante-2.3.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:88c36ebf9b1f177301985121b78555939937f1fe22bd712221621f8a640136f9"},
+    {file = "desbordante-2.3.2-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:80a414e5fddf39bbe5b9faddb2585652407748f899967ed9454dea28218bf07f"},
+    {file = "desbordante-2.3.2-cp311-cp311-macosx_11_0_x86_64.whl", hash = "sha256:06de75b26ac50b71b018d28db6c38f2def8a0c5518beb71980ef71924cab86d8"},
+    {file = "desbordante-2.3.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:a46a2024e857717b781aecf7da4c7f630b9e114317d0aa423cc4095b92291024"},
+    {file = "desbordante-2.3.2-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:a9e56041c02271c9a0d1c836298744427b03527be52de4688c873822f602b05a"},
+    {file = "desbordante-2.3.2-cp312-cp312-macosx_11_0_x86_64.whl", hash = "sha256:bde56f053a4f74c307fa3cc94fe9c3eae4df1ffbded5b533c65ca3309d0c23f2"},
+    {file = "desbordante-2.3.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:dced2bb4016c970a7feee1dd164d70955d709f34647995c41da026ccb280de69"},
+    {file = "desbordante-2.3.2-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:971cfb68b14baf071e66d9dcc1803f7b70a139d09ade93c5388fe7266ba5ca2b"},
+    {file = "desbordante-2.3.2-cp313-cp313-macosx_11_0_x86_64.whl", hash = "sha256:bf1ac08eba0eb1b1dbe35977a166456c58a19f6d80291c6bd545bf8ca0641f3b"},
+    {file = "desbordante-2.3.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:203e332b9352cfde4be67c5738dbd46fd16b50b42aa21d8ce96fcc1e9b9568de"},
+    {file = "desbordante-2.3.2-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:e42c4193c124bbd1f7a86c2e5b47537c16ca526ead0d486fd5dcf846a6d1fb74"},
+    {file = "desbordante-2.3.2-cp38-cp38-macosx_11_0_x86_64.whl", hash = "sha256:6f1a5181b776e7064573d000e052099c99a33b3e388d94535c9d5dd54fc60eb4"},
+    {file = "desbordante-2.3.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9e7da77e0eb4330a1979e57f7564bedaecd6d9a9c992fc3f9e1933a9fd46cc02"},
+    {file = "desbordante-2.3.2-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:3012bebd7031d5ee9f70768d8a039a93ad0bcdea4b7f81a63bee4b21d21665de"},
+    {file = "desbordante-2.3.2-cp39-cp39-macosx_11_0_x86_64.whl", hash = "sha256:a476b53fbdced7949af3d013ec3674d3dbf0b9b046d773715b5afd705088aefd"},
+    {file = "desbordante-2.3.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:fd2d66b8d975e2e4ef3637821e5b8045a6a8c38584be852dcf9005f798d1161a"},
+    {file = "desbordante-2.3.2-pp310-pypy310_pp73-macosx_11_0_arm64.whl", hash = "sha256:3253284112588f2f732f039220e98ca0aa7a13cab75e283ec3af74674a482e22"},
+    {file = "desbordante-2.3.2-pp310-pypy310_pp73-macosx_11_0_x86_64.whl", hash = "sha256:9877888724ba24f5e9f8f3b10438661aca1f5fb20938be7bc2420d2d7fb72c35"},
+    {file = "desbordante-2.3.2-pp310-pypy310_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:a514426cd561ba5827c2e94aacd56c5234c909d4e453d54a87fb56287a725039"},
+    {file = "desbordante-2.3.2-pp38-pypy38_pp73-macosx_11_0_arm64.whl", hash = "sha256:6d24e402f5bd329eeaa0ad4b3f84f4c339384b30822657d55a15b3b32e89b3f9"},
+    {file = "desbordante-2.3.2-pp38-pypy38_pp73-macosx_11_0_x86_64.whl", hash = "sha256:ea1ff00cf934c8bddfbbf0640d11c45e78d0979c5f1521308c5461b2efdc075e"},
+    {file = "desbordante-2.3.2-pp38-pypy38_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ffad4283efd5cd05b64dd8a09b696a138cc434720d094e7273fc629ac32f2dd0"},
+    {file = "desbordante-2.3.2-pp39-pypy39_pp73-macosx_11_0_arm64.whl", hash = "sha256:86b23f159472469308e878928be13f0e95186efbe7f2361c71c69c1422db5040"},
+    {file = "desbordante-2.3.2-pp39-pypy39_pp73-macosx_11_0_x86_64.whl", hash = "sha256:d7d97fd4cbaa31e377544497b03fc9e22a775971b53e17fd636fe5b9767c8be0"},
+    {file = "desbordante-2.3.2-pp39-pypy39_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:397981630b28cd4698ca6ff917c8d0325ec293579ea965e52b14e9e7e5275b6f"},
+]
+
+[[package]]
 name = "exceptiongroup"
 version = "1.3.0"
 description = "Backport of PEP 654 (exception groups)"
@@ -4322,4 +4359,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.9,<3.12"
-content-hash = "d169a58cbd4cb5033be06eea4d970deb8acf05e3f9283c5828100ed83ec67686"
+content-hash = "ecb6f3201b6229a76614e5e9c30568729f640c5f7e17b5115f37805468f2e494"

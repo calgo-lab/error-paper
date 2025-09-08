@@ -57,9 +57,14 @@ postgres=# SELECT * FROM hosp;
 
 # Set up BART: https://github.com/dbunibas/BART
 
-8. 
+8. Create the FDs from the Hosp dataset.
+python bart_setup.py
 
+9. Create the EGtask
+python fds_to_egtask.py
 
+10. With port forwarding, run the BART using their run.sh in Bart_Engine of the BART repo (after moving the .xml to the right place).
+./Bart_Engine/run.sh bart_task.xml
 
 
 
