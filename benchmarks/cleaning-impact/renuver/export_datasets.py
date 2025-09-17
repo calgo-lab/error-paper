@@ -127,7 +127,7 @@ def export_datasets(dataset_path: Path):
     # todo continue here print wrong below
     export_domino = ExportDataset(export_path_domino)
     export_renuver = ExportDataset(export_path_renuver, 'renuver/InitialTuples/')
-    datasets = ["beers", "flights", "rayyan", "tax", "food", "bridges", "cars", "restaurant"]
+    datasets = ["beers", "flights", "rayyan", "tax", "food", "bridges", "cars", "restaurant", "hospital"]
     versions = range(10)
     scenarios = ["missing_ecar", "scenario"]
 
