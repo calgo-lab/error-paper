@@ -18,9 +18,9 @@ datasets = [
 ]
 
 multi_version_scenarios = {
-    #"original": [""],
-    "missing_ecar": [str(i) for i in range(10)],
-    "scenario": [str(i) for i in range(10)]
+    "original": [""],
+    #"missing_ecar": [str(i) for i in range(10)],
+    #"scenario": [str(i) for i in range(10)]
 }
 
 experiments = []
