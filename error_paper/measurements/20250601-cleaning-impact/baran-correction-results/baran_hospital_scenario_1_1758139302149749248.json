@@ -1,0 +1,1 @@
+[{"dataset_name": "hospital", "scenario": "scenario", "version": "1", "error_detection_mode": "raha", "precision": 0.6534296028880866, "recall": 0.362, "f1": 0.4658944658944658, "runtime": 1051.5125448703766}]
