@@ -47,7 +47,7 @@ spec:
           mountPath: {{ $.Values.volumes.resultsMountPath }}
         resources:
           requests:
-            memory: "64Gi"
+            memory: "16Gi"
             cpu: 16
       restartPolicy: Never
       volumes:

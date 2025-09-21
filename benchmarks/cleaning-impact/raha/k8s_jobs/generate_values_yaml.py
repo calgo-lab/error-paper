@@ -6,14 +6,15 @@ class NoAliasDumper(yaml.SafeDumper):
         return True
 
 datasets = [
-    "beers",
-    "bridges",
-    "cars",
-    "flights",
-    "food",
-    "rayyan",
-    "restaurant",
-    "tax"
+    "hospital",
+    #"beers",
+    #"bridges",
+    #"cars",
+    #"flights",
+    #"food",
+    #"rayyan",
+    #"restaurant",
+    #"tax"
 ]
 
 scenarios = [

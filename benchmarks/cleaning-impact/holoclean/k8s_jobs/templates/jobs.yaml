@@ -57,6 +57,9 @@ spec:
           requests:
             memory: {{ $experiment.memory }}
             cpu: 32
+          limits:
+            memory: {{ $experiment.memory }}
+            cpu: 32
       - name: postgres
         image: {{ $.Values.postgres.image }}
         env:
@@ -102,6 +105,9 @@ spec:
             exit 0; # Exit successfully
         resources:
           requests:
+            memory: "16Gi"
+            cpu: 8
+          limits:
             memory: "16Gi"
             cpu: 8
       restartPolicy: Never

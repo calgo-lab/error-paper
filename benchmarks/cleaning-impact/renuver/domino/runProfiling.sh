@@ -1,6 +1,6 @@
 #!/bin/bash
 # hospital - Domino doesn't work
-#java -jar -Xms2g -Xmx52g CreateMatrix.jar "hospital.csv" "true" "," "empty" "false" "6" "true"
+java -jar -Xms2g -Xmx52g CreateMatrix.jar "hospital.csv" "true" "," "empty" "false" "6" "true"
 #java -jar -Xms2g -Xmx52g Domino.jar "datasets/hospital.csv" "true" "," "empty" "false" "6" "true"
 
 # beers - works
@@ -33,4 +33,4 @@
 
 # food - works
 #java -jar -Xms2g -Xmx52g CreateMatrix.jar "food.csv" "true" "," "empty" "false" "6" "true"
-java -jar -Xms2g -Xmx52g Domino.jar "datasets/food.csv" "true" "," "empty" "false" "6" "true"
+#java -jar -Xms2g -Xmx52g Domino.jar "datasets/food.csv" "true" "," "empty" "false" "6" "true"
