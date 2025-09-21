@@ -6,20 +6,21 @@ class NoAliasDumper(yaml.SafeDumper):
         return True
 
 datasets = [
-    "beers",
+    #"beers",
     #"bridges",
     #"cars",
     #"flights",
     #"food",
     #"rayyan",
     #"restaurant",
-    #"tax"
+    #"tax",
+    "hospital",
 ]
 
 multi_version_scenarios = {
     #"original": [""],
     "missing_ecar": [str(i) for i in range(10)],
-    #"scenario": [str(i) for i in range(10)]
+    "scenario": [str(i) for i in range(10)]
 }
 
 experiments = []

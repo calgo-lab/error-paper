@@ -1,7 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/macos,python
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,python
 
-export_data/**/
+# Ignore CSV files in export_data subdirectories but keep directory structure
+export_data/**/*.csv
+export_data/**/*.parquet
 
 ### macOS ###
 # General

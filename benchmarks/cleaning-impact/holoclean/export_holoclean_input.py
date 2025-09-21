@@ -91,7 +91,7 @@ def export_datasets(export_path: str):
     """
     e = ExportDataset(export_path)
     datasets_path = Path("../../../export_data/")
-    dataset_names = ["beers", "flights", "rayyan", "tax", "food", "bridges", "cars", "restaurant"]
+    dataset_names = ["beers", "flights", "rayyan", "tax", "food", "bridges", "cars", "restaurant", "hospital"]
     scenarios = ["missing_ecar", "scenario"]
 
     for dataset_name in dataset_names:

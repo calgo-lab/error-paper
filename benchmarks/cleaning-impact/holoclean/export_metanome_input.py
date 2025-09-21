@@ -9,7 +9,7 @@ def export_table(name: str, path: str):
 
 def main():
     datasets_path = Path("../../../export_data/")
-    dataset_names = ["beers", "flights", "rayyan", "tax", "food", "bridges", "cars", "restaurant"]
+    dataset_names = ["beers", "flights", "rayyan", "tax", "food", "bridges", "cars", "restaurant", "hospital"]
 
     for dataset_name in dataset_names:
         agg_name = f'{dataset_name}'

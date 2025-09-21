@@ -68,7 +68,7 @@ def run_docker_compose():
     versions = range(1)
     #dataset_names = ["bridges", "cars", "restaurant", "beers", "flights", "rayyan", "food", "tax"]
     #scenarios = ['missing_ecar', 'scenario']
-    dataset_names = ["beers"]
+    dataset_names = ["hospital"]
     scenarios = ['missing_ecar']
 
     # run generated datasets
