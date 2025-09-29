@@ -66,7 +66,13 @@ python fds_to_egtask.py
 10. With port forwarding, run the BART using their run.sh in Bart_Engine of the BART repo (after moving the .xml to the right place).
 ./Bart_Engine/run.sh bart_task.xml
 
+---
 
+# Generate plots
+
+11. Run the make-tab-err-datasets.ipynb notebook
+
+12. Run the analysis-and-comparison.ipynb notebook after renaming the output dataset
 
 
 

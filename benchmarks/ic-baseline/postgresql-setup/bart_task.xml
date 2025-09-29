@@ -221,7 +221,7 @@ e182: person(State: $a1, MeasureName: $b1, StateAverage: $c1), person(State: $a2
 
         <!-- NEW BLOCKS TO ACTUALLY MAKE DATA DIRTY -->
         <errorPercentages>
-            <defaultPercentage>0.25</defaultPercentage>
+            <defaultPercentage>10.0</defaultPercentage>
     <vioGenQuery id="e1">
         <comparison>($b1 != $b2)</comparison>
         <percentage>1.0</percentage>
