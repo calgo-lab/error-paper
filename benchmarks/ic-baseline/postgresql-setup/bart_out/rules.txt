@@ -1,0 +1,555 @@
+// FD:  -> Address3
+e1: hospital(address3: $address31), hospital(address3: $address32), $address31 != $address32 -> #fail.
+
+// FD:  -> Address2
+e2: hospital(address2: $address21), hospital(address2: $address22), $address21 != $address22 -> #fail.
+
+// FD:  -> HospitalType
+e3: hospital(hospitaltype: $hospitaltype1), hospital(hospitaltype: $hospitaltype2), $hospitaltype1 != $hospitaltype2 -> #fail.
+
+// FD: index -> Sample
+e4: hospital(index: $index1, sample: $sample1), hospital(index: $index2, sample: $sample2), $index1 == $index2, $sample1 != $sample2 -> #fail.
+
+// FD: index -> Score
+e5: hospital(index: $index1, score: $score1), hospital(index: $index2, score: $score2), $index1 == $index2, $score1 != $score2 -> #fail.
+
+// FD: index -> StateAverage
+e6: hospital(index: $index1, stateaverage: $stateaverage1), hospital(index: $index2, stateaverage: $stateaverage2), $index1 == $index2, $stateaverage1 != $stateaverage2 -> #fail.
+
+// FD: index -> PhoneNumber
+e7: hospital(index: $index1, phonenumber: $phonenumber1), hospital(index: $index2, phonenumber: $phonenumber2), $index1 == $index2, $phonenumber1 != $phonenumber2 -> #fail.
+
+// FD: index -> Address1
+e8: hospital(index: $index1, address1: $address11), hospital(index: $index2, address1: $address12), $index1 == $index2, $address11 != $address12 -> #fail.
+
+// FD: index -> HospitalName
+e9: hospital(index: $index1, hospitalname: $hospitalname1), hospital(index: $index2, hospitalname: $hospitalname2), $index1 == $index2, $hospitalname1 != $hospitalname2 -> #fail.
+
+// FD: index -> ProviderNumber
+e10: hospital(index: $index1, providernumber: $providernumber1), hospital(index: $index2, providernumber: $providernumber2), $index1 == $index2, $providernumber1 != $providernumber2 -> #fail.
+
+// FD: index -> ZipCode
+e11: hospital(index: $index1, zipcode: $zipcode1), hospital(index: $index2, zipcode: $zipcode2), $index1 == $index2, $zipcode1 != $zipcode2 -> #fail.
+
+// FD: index -> City
+e12: hospital(index: $index1, city: $city1), hospital(index: $index2, city: $city2), $index1 == $index2, $city1 != $city2 -> #fail.
+
+// FD: index -> CountyName
+e13: hospital(index: $index1, countyname: $countyname1), hospital(index: $index2, countyname: $countyname2), $index1 == $index2, $countyname1 != $countyname2 -> #fail.
+
+// FD: index -> MeasureCode
+e14: hospital(index: $index1, measurecode: $measurecode1), hospital(index: $index2, measurecode: $measurecode2), $index1 == $index2, $measurecode1 != $measurecode2 -> #fail.
+
+// FD: index -> MeasureName
+e15: hospital(index: $index1, measurename: $measurename1), hospital(index: $index2, measurename: $measurename2), $index1 == $index2, $measurename1 != $measurename2 -> #fail.
+
+// FD: index -> HospitalOwner
+e16: hospital(index: $index1, hospitalowner: $hospitalowner1), hospital(index: $index2, hospitalowner: $hospitalowner2), $index1 == $index2, $hospitalowner1 != $hospitalowner2 -> #fail.
+
+// FD: index -> Condition
+e17: hospital(index: $index1, condition: $condition1), hospital(index: $index2, condition: $condition2), $index1 == $index2, $condition1 != $condition2 -> #fail.
+
+// FD: index -> State
+e18: hospital(index: $index1, state: $state1), hospital(index: $index2, state: $state2), $index1 == $index2, $state1 != $state2 -> #fail.
+
+// FD: index -> EmergencyService
+e19: hospital(index: $index1, emergencyservice: $emergencyservice1), hospital(index: $index2, emergencyservice: $emergencyservice2), $index1 == $index2, $emergencyservice1 != $emergencyservice2 -> #fail.
+
+// FD: City,HospitalOwner,Score,Sample -> PhoneNumber
+e20: hospital(city: $city1, hospitalowner: $hospitalowner1, score: $score1, sample: $sample1, phonenumber: $phonenumber1), hospital(city: $city2, hospitalowner: $hospitalowner2, score: $score2, sample: $sample2, phonenumber: $phonenumber2), $city1 == $city2, $hospitalowner1 == $hospitalowner2, $score1 == $score2, $sample1 == $sample2, $phonenumber1 != $phonenumber2 -> #fail.
+
+// FD: City,HospitalOwner,Score,Sample -> Address1
+e21: hospital(city: $city1, hospitalowner: $hospitalowner1, score: $score1, sample: $sample1, address1: $address11), hospital(city: $city2, hospitalowner: $hospitalowner2, score: $score2, sample: $sample2, address1: $address12), $city1 == $city2, $hospitalowner1 == $hospitalowner2, $score1 == $score2, $sample1 == $sample2, $address11 != $address12 -> #fail.
+
+// FD: City,HospitalOwner,Score,Sample -> HospitalName
+e22: hospital(city: $city1, hospitalowner: $hospitalowner1, score: $score1, sample: $sample1, hospitalname: $hospitalname1), hospital(city: $city2, hospitalowner: $hospitalowner2, score: $score2, sample: $sample2, hospitalname: $hospitalname2), $city1 == $city2, $hospitalowner1 == $hospitalowner2, $score1 == $score2, $sample1 == $sample2, $hospitalname1 != $hospitalname2 -> #fail.
+
+// FD: City,HospitalOwner,Score,Sample -> ProviderNumber
+e23: hospital(city: $city1, hospitalowner: $hospitalowner1, score: $score1, sample: $sample1, providernumber: $providernumber1), hospital(city: $city2, hospitalowner: $hospitalowner2, score: $score2, sample: $sample2, providernumber: $providernumber2), $city1 == $city2, $hospitalowner1 == $hospitalowner2, $score1 == $score2, $sample1 == $sample2, $providernumber1 != $providernumber2 -> #fail.
+
+// FD: City,HospitalOwner,Score,Sample -> ZipCode
+e24: hospital(city: $city1, hospitalowner: $hospitalowner1, score: $score1, sample: $sample1, zipcode: $zipcode1), hospital(city: $city2, hospitalowner: $hospitalowner2, score: $score2, sample: $sample2, zipcode: $zipcode2), $city1 == $city2, $hospitalowner1 == $hospitalowner2, $score1 == $score2, $sample1 == $sample2, $zipcode1 != $zipcode2 -> #fail.
+
+// FD: EmergencyService,MeasureCode,Score,Sample -> StateAverage
+e25: hospital(emergencyservice: $emergencyservice1, measurecode: $measurecode1, score: $score1, sample: $sample1, stateaverage: $stateaverage1), hospital(emergencyservice: $emergencyservice2, measurecode: $measurecode2, score: $score2, sample: $sample2, stateaverage: $stateaverage2), $emergencyservice1 == $emergencyservice2, $measurecode1 == $measurecode2, $score1 == $score2, $sample1 == $sample2, $stateaverage1 != $stateaverage2 -> #fail.
+
+// FD: EmergencyService,MeasureCode,Score,Sample -> State
+e26: hospital(emergencyservice: $emergencyservice1, measurecode: $measurecode1, score: $score1, sample: $sample1, state: $state1), hospital(emergencyservice: $emergencyservice2, measurecode: $measurecode2, score: $score2, sample: $sample2, state: $state2), $emergencyservice1 == $emergencyservice2, $measurecode1 == $measurecode2, $score1 == $score2, $sample1 == $sample2, $state1 != $state2 -> #fail.
+
+// FD: EmergencyService,MeasureName,Score,Sample -> StateAverage
+e27: hospital(emergencyservice: $emergencyservice1, measurename: $measurename1, score: $score1, sample: $sample1, stateaverage: $stateaverage1), hospital(emergencyservice: $emergencyservice2, measurename: $measurename2, score: $score2, sample: $sample2, stateaverage: $stateaverage2), $emergencyservice1 == $emergencyservice2, $measurename1 == $measurename2, $score1 == $score2, $sample1 == $sample2, $stateaverage1 != $stateaverage2 -> #fail.
+
+// FD: EmergencyService,MeasureName,Score,Sample -> State
+e28: hospital(emergencyservice: $emergencyservice1, measurename: $measurename1, score: $score1, sample: $sample1, state: $state1), hospital(emergencyservice: $emergencyservice2, measurename: $measurename2, score: $score2, sample: $sample2, state: $state2), $emergencyservice1 == $emergencyservice2, $measurename1 == $measurename2, $score1 == $score2, $sample1 == $sample2, $state1 != $state2 -> #fail.
+
+// FD: HospitalOwner,Condition,Score,Sample -> State
+e29: hospital(hospitalowner: $hospitalowner1, condition: $condition1, score: $score1, sample: $sample1, state: $state1), hospital(hospitalowner: $hospitalowner2, condition: $condition2, score: $score2, sample: $sample2, state: $state2), $hospitalowner1 == $hospitalowner2, $condition1 == $condition2, $score1 == $score2, $sample1 == $sample2, $state1 != $state2 -> #fail.
+
+// FD: HospitalOwner,EmergencyService,Score,Sample -> State
+e30: hospital(hospitalowner: $hospitalowner1, emergencyservice: $emergencyservice1, score: $score1, sample: $sample1, state: $state1), hospital(hospitalowner: $hospitalowner2, emergencyservice: $emergencyservice2, score: $score2, sample: $sample2, state: $state2), $hospitalowner1 == $hospitalowner2, $emergencyservice1 == $emergencyservice2, $score1 == $score2, $sample1 == $sample2, $state1 != $state2 -> #fail.
+
+// FD: EmergencyService,Condition,Score,Sample -> State
+e31: hospital(emergencyservice: $emergencyservice1, condition: $condition1, score: $score1, sample: $sample1, state: $state1), hospital(emergencyservice: $emergencyservice2, condition: $condition2, score: $score2, sample: $sample2, state: $state2), $emergencyservice1 == $emergencyservice2, $condition1 == $condition2, $score1 == $score2, $sample1 == $sample2, $state1 != $state2 -> #fail.
+
+// FD: ZipCode,Sample,StateAverage -> index
+e32: hospital(zipcode: $zipcode1, sample: $sample1, stateaverage: $stateaverage1, index: $index1), hospital(zipcode: $zipcode2, sample: $sample2, stateaverage: $stateaverage2, index: $index2), $zipcode1 == $zipcode2, $sample1 == $sample2, $stateaverage1 == $stateaverage2, $index1 != $index2 -> #fail.
+
+// FD: ZipCode,Sample,StateAverage -> Score
+e33: hospital(zipcode: $zipcode1, sample: $sample1, stateaverage: $stateaverage1, score: $score1), hospital(zipcode: $zipcode2, sample: $sample2, stateaverage: $stateaverage2, score: $score2), $zipcode1 == $zipcode2, $sample1 == $sample2, $stateaverage1 == $stateaverage2, $score1 != $score2 -> #fail.
+
+// FD: City,HospitalOwner,Sample,StateAverage -> index
+e34: hospital(city: $city1, hospitalowner: $hospitalowner1, sample: $sample1, stateaverage: $stateaverage1, index: $index1), hospital(city: $city2, hospitalowner: $hospitalowner2, sample: $sample2, stateaverage: $stateaverage2, index: $index2), $city1 == $city2, $hospitalowner1 == $hospitalowner2, $sample1 == $sample2, $stateaverage1 == $stateaverage2, $index1 != $index2 -> #fail.
+
+// FD: City,HospitalOwner,Sample,StateAverage -> Score
+e35: hospital(city: $city1, hospitalowner: $hospitalowner1, sample: $sample1, stateaverage: $stateaverage1, score: $score1), hospital(city: $city2, hospitalowner: $hospitalowner2, sample: $sample2, stateaverage: $stateaverage2, score: $score2), $city1 == $city2, $hospitalowner1 == $hospitalowner2, $sample1 == $sample2, $stateaverage1 == $stateaverage2, $score1 != $score2 -> #fail.
+
+// FD: City,HospitalOwner,Sample,StateAverage -> PhoneNumber
+e36: hospital(city: $city1, hospitalowner: $hospitalowner1, sample: $sample1, stateaverage: $stateaverage1, phonenumber: $phonenumber1), hospital(city: $city2, hospitalowner: $hospitalowner2, sample: $sample2, stateaverage: $stateaverage2, phonenumber: $phonenumber2), $city1 == $city2, $hospitalowner1 == $hospitalowner2, $sample1 == $sample2, $stateaverage1 == $stateaverage2, $phonenumber1 != $phonenumber2 -> #fail.
+
+// FD: City,HospitalOwner,Sample,StateAverage -> Address1
+e37: hospital(city: $city1, hospitalowner: $hospitalowner1, sample: $sample1, stateaverage: $stateaverage1, address1: $address11), hospital(city: $city2, hospitalowner: $hospitalowner2, sample: $sample2, stateaverage: $stateaverage2, address1: $address12), $city1 == $city2, $hospitalowner1 == $hospitalowner2, $sample1 == $sample2, $stateaverage1 == $stateaverage2, $address11 != $address12 -> #fail.
+
+// FD: City,HospitalOwner,Sample,StateAverage -> HospitalName
+e38: hospital(city: $city1, hospitalowner: $hospitalowner1, sample: $sample1, stateaverage: $stateaverage1, hospitalname: $hospitalname1), hospital(city: $city2, hospitalowner: $hospitalowner2, sample: $sample2, stateaverage: $stateaverage2, hospitalname: $hospitalname2), $city1 == $city2, $hospitalowner1 == $hospitalowner2, $sample1 == $sample2, $stateaverage1 == $stateaverage2, $hospitalname1 != $hospitalname2 -> #fail.
+
+// FD: City,HospitalOwner,Sample,StateAverage -> ProviderNumber
+e39: hospital(city: $city1, hospitalowner: $hospitalowner1, sample: $sample1, stateaverage: $stateaverage1, providernumber: $providernumber1), hospital(city: $city2, hospitalowner: $hospitalowner2, sample: $sample2, stateaverage: $stateaverage2, providernumber: $providernumber2), $city1 == $city2, $hospitalowner1 == $hospitalowner2, $sample1 == $sample2, $stateaverage1 == $stateaverage2, $providernumber1 != $providernumber2 -> #fail.
+
+// FD: City,HospitalOwner,Sample,StateAverage -> ZipCode
+e40: hospital(city: $city1, hospitalowner: $hospitalowner1, sample: $sample1, stateaverage: $stateaverage1, zipcode: $zipcode1), hospital(city: $city2, hospitalowner: $hospitalowner2, sample: $sample2, stateaverage: $stateaverage2, zipcode: $zipcode2), $city1 == $city2, $hospitalowner1 == $hospitalowner2, $sample1 == $sample2, $stateaverage1 == $stateaverage2, $zipcode1 != $zipcode2 -> #fail.
+
+// FD: ZipCode,Sample -> PhoneNumber
+e41: hospital(zipcode: $zipcode1, sample: $sample1, phonenumber: $phonenumber1), hospital(zipcode: $zipcode2, sample: $sample2, phonenumber: $phonenumber2), $zipcode1 == $zipcode2, $sample1 == $sample2, $phonenumber1 != $phonenumber2 -> #fail.
+
+// FD: ZipCode,Sample -> Address1
+e42: hospital(zipcode: $zipcode1, sample: $sample1, address1: $address11), hospital(zipcode: $zipcode2, sample: $sample2, address1: $address12), $zipcode1 == $zipcode2, $sample1 == $sample2, $address11 != $address12 -> #fail.
+
+// FD: ZipCode,Sample -> HospitalName
+e43: hospital(zipcode: $zipcode1, sample: $sample1, hospitalname: $hospitalname1), hospital(zipcode: $zipcode2, sample: $sample2, hospitalname: $hospitalname2), $zipcode1 == $zipcode2, $sample1 == $sample2, $hospitalname1 != $hospitalname2 -> #fail.
+
+// FD: ZipCode,Sample -> ProviderNumber
+e44: hospital(zipcode: $zipcode1, sample: $sample1, providernumber: $providernumber1), hospital(zipcode: $zipcode2, sample: $sample2, providernumber: $providernumber2), $zipcode1 == $zipcode2, $sample1 == $sample2, $providernumber1 != $providernumber2 -> #fail.
+
+// FD: ZipCode,Sample -> HospitalOwner
+e45: hospital(zipcode: $zipcode1, sample: $sample1, hospitalowner: $hospitalowner1), hospital(zipcode: $zipcode2, sample: $sample2, hospitalowner: $hospitalowner2), $zipcode1 == $zipcode2, $sample1 == $sample2, $hospitalowner1 != $hospitalowner2 -> #fail.
+
+// FD: ZipCode,MeasureCode,Sample -> index
+e46: hospital(zipcode: $zipcode1, measurecode: $measurecode1, sample: $sample1, index: $index1), hospital(zipcode: $zipcode2, measurecode: $measurecode2, sample: $sample2, index: $index2), $zipcode1 == $zipcode2, $measurecode1 == $measurecode2, $sample1 == $sample2, $index1 != $index2 -> #fail.
+
+// FD: ZipCode,MeasureCode,Sample -> Score
+e47: hospital(zipcode: $zipcode1, measurecode: $measurecode1, sample: $sample1, score: $score1), hospital(zipcode: $zipcode2, measurecode: $measurecode2, sample: $sample2, score: $score2), $zipcode1 == $zipcode2, $measurecode1 == $measurecode2, $sample1 == $sample2, $score1 != $score2 -> #fail.
+
+// FD: ZipCode,MeasureName,Sample -> index
+e48: hospital(zipcode: $zipcode1, measurename: $measurename1, sample: $sample1, index: $index1), hospital(zipcode: $zipcode2, measurename: $measurename2, sample: $sample2, index: $index2), $zipcode1 == $zipcode2, $measurename1 == $measurename2, $sample1 == $sample2, $index1 != $index2 -> #fail.
+
+// FD: ZipCode,MeasureName,Sample -> Score
+e49: hospital(zipcode: $zipcode1, measurename: $measurename1, sample: $sample1, score: $score1), hospital(zipcode: $zipcode2, measurename: $measurename2, sample: $sample2, score: $score2), $zipcode1 == $zipcode2, $measurename1 == $measurename2, $sample1 == $sample2, $score1 != $score2 -> #fail.
+
+// FD: City,HospitalOwner,MeasureCode,Sample -> index
+e50: hospital(city: $city1, hospitalowner: $hospitalowner1, measurecode: $measurecode1, sample: $sample1, index: $index1), hospital(city: $city2, hospitalowner: $hospitalowner2, measurecode: $measurecode2, sample: $sample2, index: $index2), $city1 == $city2, $hospitalowner1 == $hospitalowner2, $measurecode1 == $measurecode2, $sample1 == $sample2, $index1 != $index2 -> #fail.
+
+// FD: City,HospitalOwner,MeasureCode,Sample -> Score
+e51: hospital(city: $city1, hospitalowner: $hospitalowner1, measurecode: $measurecode1, sample: $sample1, score: $score1), hospital(city: $city2, hospitalowner: $hospitalowner2, measurecode: $measurecode2, sample: $sample2, score: $score2), $city1 == $city2, $hospitalowner1 == $hospitalowner2, $measurecode1 == $measurecode2, $sample1 == $sample2, $score1 != $score2 -> #fail.
+
+// FD: City,HospitalOwner,MeasureCode,Sample -> PhoneNumber
+e52: hospital(city: $city1, hospitalowner: $hospitalowner1, measurecode: $measurecode1, sample: $sample1, phonenumber: $phonenumber1), hospital(city: $city2, hospitalowner: $hospitalowner2, measurecode: $measurecode2, sample: $sample2, phonenumber: $phonenumber2), $city1 == $city2, $hospitalowner1 == $hospitalowner2, $measurecode1 == $measurecode2, $sample1 == $sample2, $phonenumber1 != $phonenumber2 -> #fail.
+
+// FD: City,HospitalOwner,MeasureCode,Sample -> Address1
+e53: hospital(city: $city1, hospitalowner: $hospitalowner1, measurecode: $measurecode1, sample: $sample1, address1: $address11), hospital(city: $city2, hospitalowner: $hospitalowner2, measurecode: $measurecode2, sample: $sample2, address1: $address12), $city1 == $city2, $hospitalowner1 == $hospitalowner2, $measurecode1 == $measurecode2, $sample1 == $sample2, $address11 != $address12 -> #fail.
+
+// FD: City,HospitalOwner,MeasureCode,Sample -> HospitalName
+e54: hospital(city: $city1, hospitalowner: $hospitalowner1, measurecode: $measurecode1, sample: $sample1, hospitalname: $hospitalname1), hospital(city: $city2, hospitalowner: $hospitalowner2, measurecode: $measurecode2, sample: $sample2, hospitalname: $hospitalname2), $city1 == $city2, $hospitalowner1 == $hospitalowner2, $measurecode1 == $measurecode2, $sample1 == $sample2, $hospitalname1 != $hospitalname2 -> #fail.
+
+// FD: City,HospitalOwner,MeasureCode,Sample -> ProviderNumber
+e55: hospital(city: $city1, hospitalowner: $hospitalowner1, measurecode: $measurecode1, sample: $sample1, providernumber: $providernumber1), hospital(city: $city2, hospitalowner: $hospitalowner2, measurecode: $measurecode2, sample: $sample2, providernumber: $providernumber2), $city1 == $city2, $hospitalowner1 == $hospitalowner2, $measurecode1 == $measurecode2, $sample1 == $sample2, $providernumber1 != $providernumber2 -> #fail.
+
+// FD: City,HospitalOwner,MeasureCode,Sample -> ZipCode
+e56: hospital(city: $city1, hospitalowner: $hospitalowner1, measurecode: $measurecode1, sample: $sample1, zipcode: $zipcode1), hospital(city: $city2, hospitalowner: $hospitalowner2, measurecode: $measurecode2, sample: $sample2, zipcode: $zipcode2), $city1 == $city2, $hospitalowner1 == $hospitalowner2, $measurecode1 == $measurecode2, $sample1 == $sample2, $zipcode1 != $zipcode2 -> #fail.
+
+// FD: City,HospitalOwner,MeasureName,Sample -> index
+e57: hospital(city: $city1, hospitalowner: $hospitalowner1, measurename: $measurename1, sample: $sample1, index: $index1), hospital(city: $city2, hospitalowner: $hospitalowner2, measurename: $measurename2, sample: $sample2, index: $index2), $city1 == $city2, $hospitalowner1 == $hospitalowner2, $measurename1 == $measurename2, $sample1 == $sample2, $index1 != $index2 -> #fail.
+
+// FD: City,HospitalOwner,MeasureName,Sample -> Score
+e58: hospital(city: $city1, hospitalowner: $hospitalowner1, measurename: $measurename1, sample: $sample1, score: $score1), hospital(city: $city2, hospitalowner: $hospitalowner2, measurename: $measurename2, sample: $sample2, score: $score2), $city1 == $city2, $hospitalowner1 == $hospitalowner2, $measurename1 == $measurename2, $sample1 == $sample2, $score1 != $score2 -> #fail.
+
+// FD: City,HospitalOwner,MeasureName,Sample -> PhoneNumber
+e59: hospital(city: $city1, hospitalowner: $hospitalowner1, measurename: $measurename1, sample: $sample1, phonenumber: $phonenumber1), hospital(city: $city2, hospitalowner: $hospitalowner2, measurename: $measurename2, sample: $sample2, phonenumber: $phonenumber2), $city1 == $city2, $hospitalowner1 == $hospitalowner2, $measurename1 == $measurename2, $sample1 == $sample2, $phonenumber1 != $phonenumber2 -> #fail.
+
+// FD: City,HospitalOwner,MeasureName,Sample -> Address1
+e60: hospital(city: $city1, hospitalowner: $hospitalowner1, measurename: $measurename1, sample: $sample1, address1: $address11), hospital(city: $city2, hospitalowner: $hospitalowner2, measurename: $measurename2, sample: $sample2, address1: $address12), $city1 == $city2, $hospitalowner1 == $hospitalowner2, $measurename1 == $measurename2, $sample1 == $sample2, $address11 != $address12 -> #fail.
+
+// FD: City,HospitalOwner,MeasureName,Sample -> HospitalName
+e61: hospital(city: $city1, hospitalowner: $hospitalowner1, measurename: $measurename1, sample: $sample1, hospitalname: $hospitalname1), hospital(city: $city2, hospitalowner: $hospitalowner2, measurename: $measurename2, sample: $sample2, hospitalname: $hospitalname2), $city1 == $city2, $hospitalowner1 == $hospitalowner2, $measurename1 == $measurename2, $sample1 == $sample2, $hospitalname1 != $hospitalname2 -> #fail.
+
+// FD: City,HospitalOwner,MeasureName,Sample -> ProviderNumber
+e62: hospital(city: $city1, hospitalowner: $hospitalowner1, measurename: $measurename1, sample: $sample1, providernumber: $providernumber1), hospital(city: $city2, hospitalowner: $hospitalowner2, measurename: $measurename2, sample: $sample2, providernumber: $providernumber2), $city1 == $city2, $hospitalowner1 == $hospitalowner2, $measurename1 == $measurename2, $sample1 == $sample2, $providernumber1 != $providernumber2 -> #fail.
+
+// FD: City,HospitalOwner,MeasureName,Sample -> ZipCode
+e63: hospital(city: $city1, hospitalowner: $hospitalowner1, measurename: $measurename1, sample: $sample1, zipcode: $zipcode1), hospital(city: $city2, hospitalowner: $hospitalowner2, measurename: $measurename2, sample: $sample2, zipcode: $zipcode2), $city1 == $city2, $hospitalowner1 == $hospitalowner2, $measurename1 == $measurename2, $sample1 == $sample2, $zipcode1 != $zipcode2 -> #fail.
+
+// FD: HospitalOwner,MeasureCode,Sample -> StateAverage
+e64: hospital(hospitalowner: $hospitalowner1, measurecode: $measurecode1, sample: $sample1, stateaverage: $stateaverage1), hospital(hospitalowner: $hospitalowner2, measurecode: $measurecode2, sample: $sample2, stateaverage: $stateaverage2), $hospitalowner1 == $hospitalowner2, $measurecode1 == $measurecode2, $sample1 == $sample2, $stateaverage1 != $stateaverage2 -> #fail.
+
+// FD: HospitalOwner,MeasureCode,Sample -> State
+e65: hospital(hospitalowner: $hospitalowner1, measurecode: $measurecode1, sample: $sample1, state: $state1), hospital(hospitalowner: $hospitalowner2, measurecode: $measurecode2, sample: $sample2, state: $state2), $hospitalowner1 == $hospitalowner2, $measurecode1 == $measurecode2, $sample1 == $sample2, $state1 != $state2 -> #fail.
+
+// FD: HospitalOwner,MeasureName,Sample -> StateAverage
+e66: hospital(hospitalowner: $hospitalowner1, measurename: $measurename1, sample: $sample1, stateaverage: $stateaverage1), hospital(hospitalowner: $hospitalowner2, measurename: $measurename2, sample: $sample2, stateaverage: $stateaverage2), $hospitalowner1 == $hospitalowner2, $measurename1 == $measurename2, $sample1 == $sample2, $stateaverage1 != $stateaverage2 -> #fail.
+
+// FD: HospitalOwner,MeasureName,Sample -> State
+e67: hospital(hospitalowner: $hospitalowner1, measurename: $measurename1, sample: $sample1, state: $state1), hospital(hospitalowner: $hospitalowner2, measurename: $measurename2, sample: $sample2, state: $state2), $hospitalowner1 == $hospitalowner2, $measurename1 == $measurename2, $sample1 == $sample2, $state1 != $state2 -> #fail.
+
+// FD: StateAverage -> MeasureCode
+e68: hospital(stateaverage: $stateaverage1, measurecode: $measurecode1), hospital(stateaverage: $stateaverage2, measurecode: $measurecode2), $stateaverage1 == $stateaverage2, $measurecode1 != $measurecode2 -> #fail.
+
+// FD: StateAverage -> MeasureName
+e69: hospital(stateaverage: $stateaverage1, measurename: $measurename1), hospital(stateaverage: $stateaverage2, measurename: $measurename2), $stateaverage1 == $stateaverage2, $measurename1 != $measurename2 -> #fail.
+
+// FD: StateAverage -> Condition
+e70: hospital(stateaverage: $stateaverage1, condition: $condition1), hospital(stateaverage: $stateaverage2, condition: $condition2), $stateaverage1 == $stateaverage2, $condition1 != $condition2 -> #fail.
+
+// FD: StateAverage -> State
+e71: hospital(stateaverage: $stateaverage1, state: $state1), hospital(stateaverage: $stateaverage2, state: $state2), $stateaverage1 == $stateaverage2, $state1 != $state2 -> #fail.
+
+// FD: PhoneNumber,StateAverage -> index
+e72: hospital(phonenumber: $phonenumber1, stateaverage: $stateaverage1, index: $index1), hospital(phonenumber: $phonenumber2, stateaverage: $stateaverage2, index: $index2), $phonenumber1 == $phonenumber2, $stateaverage1 == $stateaverage2, $index1 != $index2 -> #fail.
+
+// FD: PhoneNumber,StateAverage -> Sample
+e73: hospital(phonenumber: $phonenumber1, stateaverage: $stateaverage1, sample: $sample1), hospital(phonenumber: $phonenumber2, stateaverage: $stateaverage2, sample: $sample2), $phonenumber1 == $phonenumber2, $stateaverage1 == $stateaverage2, $sample1 != $sample2 -> #fail.
+
+// FD: PhoneNumber,StateAverage -> Score
+e74: hospital(phonenumber: $phonenumber1, stateaverage: $stateaverage1, score: $score1), hospital(phonenumber: $phonenumber2, stateaverage: $stateaverage2, score: $score2), $phonenumber1 == $phonenumber2, $stateaverage1 == $stateaverage2, $score1 != $score2 -> #fail.
+
+// FD: Address1,StateAverage -> index
+e75: hospital(address1: $address11, stateaverage: $stateaverage1, index: $index1), hospital(address1: $address12, stateaverage: $stateaverage2, index: $index2), $address11 == $address12, $stateaverage1 == $stateaverage2, $index1 != $index2 -> #fail.
+
+// FD: Address1,StateAverage -> Sample
+e76: hospital(address1: $address11, stateaverage: $stateaverage1, sample: $sample1), hospital(address1: $address12, stateaverage: $stateaverage2, sample: $sample2), $address11 == $address12, $stateaverage1 == $stateaverage2, $sample1 != $sample2 -> #fail.
+
+// FD: Address1,StateAverage -> Score
+e77: hospital(address1: $address11, stateaverage: $stateaverage1, score: $score1), hospital(address1: $address12, stateaverage: $stateaverage2, score: $score2), $address11 == $address12, $stateaverage1 == $stateaverage2, $score1 != $score2 -> #fail.
+
+// FD: HospitalName,StateAverage -> index
+e78: hospital(hospitalname: $hospitalname1, stateaverage: $stateaverage1, index: $index1), hospital(hospitalname: $hospitalname2, stateaverage: $stateaverage2, index: $index2), $hospitalname1 == $hospitalname2, $stateaverage1 == $stateaverage2, $index1 != $index2 -> #fail.
+
+// FD: HospitalName,StateAverage -> Sample
+e79: hospital(hospitalname: $hospitalname1, stateaverage: $stateaverage1, sample: $sample1), hospital(hospitalname: $hospitalname2, stateaverage: $stateaverage2, sample: $sample2), $hospitalname1 == $hospitalname2, $stateaverage1 == $stateaverage2, $sample1 != $sample2 -> #fail.
+
+// FD: HospitalName,StateAverage -> Score
+e80: hospital(hospitalname: $hospitalname1, stateaverage: $stateaverage1, score: $score1), hospital(hospitalname: $hospitalname2, stateaverage: $stateaverage2, score: $score2), $hospitalname1 == $hospitalname2, $stateaverage1 == $stateaverage2, $score1 != $score2 -> #fail.
+
+// FD: ProviderNumber,StateAverage -> index
+e81: hospital(providernumber: $providernumber1, stateaverage: $stateaverage1, index: $index1), hospital(providernumber: $providernumber2, stateaverage: $stateaverage2, index: $index2), $providernumber1 == $providernumber2, $stateaverage1 == $stateaverage2, $index1 != $index2 -> #fail.
+
+// FD: ProviderNumber,StateAverage -> Sample
+e82: hospital(providernumber: $providernumber1, stateaverage: $stateaverage1, sample: $sample1), hospital(providernumber: $providernumber2, stateaverage: $stateaverage2, sample: $sample2), $providernumber1 == $providernumber2, $stateaverage1 == $stateaverage2, $sample1 != $sample2 -> #fail.
+
+// FD: ProviderNumber,StateAverage -> Score
+e83: hospital(providernumber: $providernumber1, stateaverage: $stateaverage1, score: $score1), hospital(providernumber: $providernumber2, stateaverage: $stateaverage2, score: $score2), $providernumber1 == $providernumber2, $stateaverage1 == $stateaverage2, $score1 != $score2 -> #fail.
+
+// FD: ZipCode,HospitalOwner,StateAverage -> index
+e84: hospital(zipcode: $zipcode1, hospitalowner: $hospitalowner1, stateaverage: $stateaverage1, index: $index1), hospital(zipcode: $zipcode2, hospitalowner: $hospitalowner2, stateaverage: $stateaverage2, index: $index2), $zipcode1 == $zipcode2, $hospitalowner1 == $hospitalowner2, $stateaverage1 == $stateaverage2, $index1 != $index2 -> #fail.
+
+// FD: ZipCode,HospitalOwner,StateAverage -> Sample
+e85: hospital(zipcode: $zipcode1, hospitalowner: $hospitalowner1, stateaverage: $stateaverage1, sample: $sample1), hospital(zipcode: $zipcode2, hospitalowner: $hospitalowner2, stateaverage: $stateaverage2, sample: $sample2), $zipcode1 == $zipcode2, $hospitalowner1 == $hospitalowner2, $stateaverage1 == $stateaverage2, $sample1 != $sample2 -> #fail.
+
+// FD: ZipCode,HospitalOwner,StateAverage -> Score
+e86: hospital(zipcode: $zipcode1, hospitalowner: $hospitalowner1, stateaverage: $stateaverage1, score: $score1), hospital(zipcode: $zipcode2, hospitalowner: $hospitalowner2, stateaverage: $stateaverage2, score: $score2), $zipcode1 == $zipcode2, $hospitalowner1 == $hospitalowner2, $stateaverage1 == $stateaverage2, $score1 != $score2 -> #fail.
+
+// FD: PhoneNumber -> Address1
+e87: hospital(phonenumber: $phonenumber1, address1: $address11), hospital(phonenumber: $phonenumber2, address1: $address12), $phonenumber1 == $phonenumber2, $address11 != $address12 -> #fail.
+
+// FD: PhoneNumber -> HospitalName
+e88: hospital(phonenumber: $phonenumber1, hospitalname: $hospitalname1), hospital(phonenumber: $phonenumber2, hospitalname: $hospitalname2), $phonenumber1 == $phonenumber2, $hospitalname1 != $hospitalname2 -> #fail.
+
+// FD: PhoneNumber -> ProviderNumber
+e89: hospital(phonenumber: $phonenumber1, providernumber: $providernumber1), hospital(phonenumber: $phonenumber2, providernumber: $providernumber2), $phonenumber1 == $phonenumber2, $providernumber1 != $providernumber2 -> #fail.
+
+// FD: PhoneNumber -> ZipCode
+e90: hospital(phonenumber: $phonenumber1, zipcode: $zipcode1), hospital(phonenumber: $phonenumber2, zipcode: $zipcode2), $phonenumber1 == $phonenumber2, $zipcode1 != $zipcode2 -> #fail.
+
+// FD: PhoneNumber -> City
+e91: hospital(phonenumber: $phonenumber1, city: $city1), hospital(phonenumber: $phonenumber2, city: $city2), $phonenumber1 == $phonenumber2, $city1 != $city2 -> #fail.
+
+// FD: PhoneNumber -> CountyName
+e92: hospital(phonenumber: $phonenumber1, countyname: $countyname1), hospital(phonenumber: $phonenumber2, countyname: $countyname2), $phonenumber1 == $phonenumber2, $countyname1 != $countyname2 -> #fail.
+
+// FD: PhoneNumber -> HospitalOwner
+e93: hospital(phonenumber: $phonenumber1, hospitalowner: $hospitalowner1), hospital(phonenumber: $phonenumber2, hospitalowner: $hospitalowner2), $phonenumber1 == $phonenumber2, $hospitalowner1 != $hospitalowner2 -> #fail.
+
+// FD: PhoneNumber -> State
+e94: hospital(phonenumber: $phonenumber1, state: $state1), hospital(phonenumber: $phonenumber2, state: $state2), $phonenumber1 == $phonenumber2, $state1 != $state2 -> #fail.
+
+// FD: PhoneNumber -> EmergencyService
+e95: hospital(phonenumber: $phonenumber1, emergencyservice: $emergencyservice1), hospital(phonenumber: $phonenumber2, emergencyservice: $emergencyservice2), $phonenumber1 == $phonenumber2, $emergencyservice1 != $emergencyservice2 -> #fail.
+
+// FD: PhoneNumber,MeasureCode -> index
+e96: hospital(phonenumber: $phonenumber1, measurecode: $measurecode1, index: $index1), hospital(phonenumber: $phonenumber2, measurecode: $measurecode2, index: $index2), $phonenumber1 == $phonenumber2, $measurecode1 == $measurecode2, $index1 != $index2 -> #fail.
+
+// FD: PhoneNumber,MeasureCode -> Sample
+e97: hospital(phonenumber: $phonenumber1, measurecode: $measurecode1, sample: $sample1), hospital(phonenumber: $phonenumber2, measurecode: $measurecode2, sample: $sample2), $phonenumber1 == $phonenumber2, $measurecode1 == $measurecode2, $sample1 != $sample2 -> #fail.
+
+// FD: PhoneNumber,MeasureCode -> Score
+e98: hospital(phonenumber: $phonenumber1, measurecode: $measurecode1, score: $score1), hospital(phonenumber: $phonenumber2, measurecode: $measurecode2, score: $score2), $phonenumber1 == $phonenumber2, $measurecode1 == $measurecode2, $score1 != $score2 -> #fail.
+
+// FD: PhoneNumber,MeasureCode -> StateAverage
+e99: hospital(phonenumber: $phonenumber1, measurecode: $measurecode1, stateaverage: $stateaverage1), hospital(phonenumber: $phonenumber2, measurecode: $measurecode2, stateaverage: $stateaverage2), $phonenumber1 == $phonenumber2, $measurecode1 == $measurecode2, $stateaverage1 != $stateaverage2 -> #fail.
+
+// FD: PhoneNumber,MeasureName -> index
+e100: hospital(phonenumber: $phonenumber1, measurename: $measurename1, index: $index1), hospital(phonenumber: $phonenumber2, measurename: $measurename2, index: $index2), $phonenumber1 == $phonenumber2, $measurename1 == $measurename2, $index1 != $index2 -> #fail.
+
+// FD: PhoneNumber,MeasureName -> Sample
+e101: hospital(phonenumber: $phonenumber1, measurename: $measurename1, sample: $sample1), hospital(phonenumber: $phonenumber2, measurename: $measurename2, sample: $sample2), $phonenumber1 == $phonenumber2, $measurename1 == $measurename2, $sample1 != $sample2 -> #fail.
+
+// FD: PhoneNumber,MeasureName -> Score
+e102: hospital(phonenumber: $phonenumber1, measurename: $measurename1, score: $score1), hospital(phonenumber: $phonenumber2, measurename: $measurename2, score: $score2), $phonenumber1 == $phonenumber2, $measurename1 == $measurename2, $score1 != $score2 -> #fail.
+
+// FD: PhoneNumber,MeasureName -> StateAverage
+e103: hospital(phonenumber: $phonenumber1, measurename: $measurename1, stateaverage: $stateaverage1), hospital(phonenumber: $phonenumber2, measurename: $measurename2, stateaverage: $stateaverage2), $phonenumber1 == $phonenumber2, $measurename1 == $measurename2, $stateaverage1 != $stateaverage2 -> #fail.
+
+// FD: Address1 -> PhoneNumber
+e104: hospital(address1: $address11, phonenumber: $phonenumber1), hospital(address1: $address12, phonenumber: $phonenumber2), $address11 == $address12, $phonenumber1 != $phonenumber2 -> #fail.
+
+// FD: Address1 -> HospitalName
+e105: hospital(address1: $address11, hospitalname: $hospitalname1), hospital(address1: $address12, hospitalname: $hospitalname2), $address11 == $address12, $hospitalname1 != $hospitalname2 -> #fail.
+
+// FD: Address1 -> ProviderNumber
+e106: hospital(address1: $address11, providernumber: $providernumber1), hospital(address1: $address12, providernumber: $providernumber2), $address11 == $address12, $providernumber1 != $providernumber2 -> #fail.
+
+// FD: Address1 -> ZipCode
+e107: hospital(address1: $address11, zipcode: $zipcode1), hospital(address1: $address12, zipcode: $zipcode2), $address11 == $address12, $zipcode1 != $zipcode2 -> #fail.
+
+// FD: Address1 -> City
+e108: hospital(address1: $address11, city: $city1), hospital(address1: $address12, city: $city2), $address11 == $address12, $city1 != $city2 -> #fail.
+
+// FD: Address1 -> CountyName
+e109: hospital(address1: $address11, countyname: $countyname1), hospital(address1: $address12, countyname: $countyname2), $address11 == $address12, $countyname1 != $countyname2 -> #fail.
+
+// FD: Address1 -> HospitalOwner
+e110: hospital(address1: $address11, hospitalowner: $hospitalowner1), hospital(address1: $address12, hospitalowner: $hospitalowner2), $address11 == $address12, $hospitalowner1 != $hospitalowner2 -> #fail.
+
+// FD: Address1 -> State
+e111: hospital(address1: $address11, state: $state1), hospital(address1: $address12, state: $state2), $address11 == $address12, $state1 != $state2 -> #fail.
+
+// FD: Address1 -> EmergencyService
+e112: hospital(address1: $address11, emergencyservice: $emergencyservice1), hospital(address1: $address12, emergencyservice: $emergencyservice2), $address11 == $address12, $emergencyservice1 != $emergencyservice2 -> #fail.
+
+// FD: Address1,MeasureCode -> index
+e113: hospital(address1: $address11, measurecode: $measurecode1, index: $index1), hospital(address1: $address12, measurecode: $measurecode2, index: $index2), $address11 == $address12, $measurecode1 == $measurecode2, $index1 != $index2 -> #fail.
+
+// FD: Address1,MeasureCode -> Sample
+e114: hospital(address1: $address11, measurecode: $measurecode1, sample: $sample1), hospital(address1: $address12, measurecode: $measurecode2, sample: $sample2), $address11 == $address12, $measurecode1 == $measurecode2, $sample1 != $sample2 -> #fail.
+
+// FD: Address1,MeasureCode -> Score
+e115: hospital(address1: $address11, measurecode: $measurecode1, score: $score1), hospital(address1: $address12, measurecode: $measurecode2, score: $score2), $address11 == $address12, $measurecode1 == $measurecode2, $score1 != $score2 -> #fail.
+
+// FD: Address1,MeasureCode -> StateAverage
+e116: hospital(address1: $address11, measurecode: $measurecode1, stateaverage: $stateaverage1), hospital(address1: $address12, measurecode: $measurecode2, stateaverage: $stateaverage2), $address11 == $address12, $measurecode1 == $measurecode2, $stateaverage1 != $stateaverage2 -> #fail.
+
+// FD: Address1,MeasureName -> index
+e117: hospital(address1: $address11, measurename: $measurename1, index: $index1), hospital(address1: $address12, measurename: $measurename2, index: $index2), $address11 == $address12, $measurename1 == $measurename2, $index1 != $index2 -> #fail.
+
+// FD: Address1,MeasureName -> Sample
+e118: hospital(address1: $address11, measurename: $measurename1, sample: $sample1), hospital(address1: $address12, measurename: $measurename2, sample: $sample2), $address11 == $address12, $measurename1 == $measurename2, $sample1 != $sample2 -> #fail.
+
+// FD: Address1,MeasureName -> Score
+e119: hospital(address1: $address11, measurename: $measurename1, score: $score1), hospital(address1: $address12, measurename: $measurename2, score: $score2), $address11 == $address12, $measurename1 == $measurename2, $score1 != $score2 -> #fail.
+
+// FD: Address1,MeasureName -> StateAverage
+e120: hospital(address1: $address11, measurename: $measurename1, stateaverage: $stateaverage1), hospital(address1: $address12, measurename: $measurename2, stateaverage: $stateaverage2), $address11 == $address12, $measurename1 == $measurename2, $stateaverage1 != $stateaverage2 -> #fail.
+
+// FD: HospitalName -> PhoneNumber
+e121: hospital(hospitalname: $hospitalname1, phonenumber: $phonenumber1), hospital(hospitalname: $hospitalname2, phonenumber: $phonenumber2), $hospitalname1 == $hospitalname2, $phonenumber1 != $phonenumber2 -> #fail.
+
+// FD: HospitalName -> Address1
+e122: hospital(hospitalname: $hospitalname1, address1: $address11), hospital(hospitalname: $hospitalname2, address1: $address12), $hospitalname1 == $hospitalname2, $address11 != $address12 -> #fail.
+
+// FD: HospitalName -> ProviderNumber
+e123: hospital(hospitalname: $hospitalname1, providernumber: $providernumber1), hospital(hospitalname: $hospitalname2, providernumber: $providernumber2), $hospitalname1 == $hospitalname2, $providernumber1 != $providernumber2 -> #fail.
+
+// FD: HospitalName -> ZipCode
+e124: hospital(hospitalname: $hospitalname1, zipcode: $zipcode1), hospital(hospitalname: $hospitalname2, zipcode: $zipcode2), $hospitalname1 == $hospitalname2, $zipcode1 != $zipcode2 -> #fail.
+
+// FD: HospitalName -> City
+e125: hospital(hospitalname: $hospitalname1, city: $city1), hospital(hospitalname: $hospitalname2, city: $city2), $hospitalname1 == $hospitalname2, $city1 != $city2 -> #fail.
+
+// FD: HospitalName -> CountyName
+e126: hospital(hospitalname: $hospitalname1, countyname: $countyname1), hospital(hospitalname: $hospitalname2, countyname: $countyname2), $hospitalname1 == $hospitalname2, $countyname1 != $countyname2 -> #fail.
+
+// FD: HospitalName -> HospitalOwner
+e127: hospital(hospitalname: $hospitalname1, hospitalowner: $hospitalowner1), hospital(hospitalname: $hospitalname2, hospitalowner: $hospitalowner2), $hospitalname1 == $hospitalname2, $hospitalowner1 != $hospitalowner2 -> #fail.
+
+// FD: HospitalName -> State
+e128: hospital(hospitalname: $hospitalname1, state: $state1), hospital(hospitalname: $hospitalname2, state: $state2), $hospitalname1 == $hospitalname2, $state1 != $state2 -> #fail.
+
+// FD: HospitalName -> EmergencyService
+e129: hospital(hospitalname: $hospitalname1, emergencyservice: $emergencyservice1), hospital(hospitalname: $hospitalname2, emergencyservice: $emergencyservice2), $hospitalname1 == $hospitalname2, $emergencyservice1 != $emergencyservice2 -> #fail.
+
+// FD: HospitalName,MeasureCode -> index
+e130: hospital(hospitalname: $hospitalname1, measurecode: $measurecode1, index: $index1), hospital(hospitalname: $hospitalname2, measurecode: $measurecode2, index: $index2), $hospitalname1 == $hospitalname2, $measurecode1 == $measurecode2, $index1 != $index2 -> #fail.
+
+// FD: HospitalName,MeasureCode -> Sample
+e131: hospital(hospitalname: $hospitalname1, measurecode: $measurecode1, sample: $sample1), hospital(hospitalname: $hospitalname2, measurecode: $measurecode2, sample: $sample2), $hospitalname1 == $hospitalname2, $measurecode1 == $measurecode2, $sample1 != $sample2 -> #fail.
+
+// FD: HospitalName,MeasureCode -> Score
+e132: hospital(hospitalname: $hospitalname1, measurecode: $measurecode1, score: $score1), hospital(hospitalname: $hospitalname2, measurecode: $measurecode2, score: $score2), $hospitalname1 == $hospitalname2, $measurecode1 == $measurecode2, $score1 != $score2 -> #fail.
+
+// FD: HospitalName,MeasureCode -> StateAverage
+e133: hospital(hospitalname: $hospitalname1, measurecode: $measurecode1, stateaverage: $stateaverage1), hospital(hospitalname: $hospitalname2, measurecode: $measurecode2, stateaverage: $stateaverage2), $hospitalname1 == $hospitalname2, $measurecode1 == $measurecode2, $stateaverage1 != $stateaverage2 -> #fail.
+
+// FD: HospitalName,MeasureName -> index
+e134: hospital(hospitalname: $hospitalname1, measurename: $measurename1, index: $index1), hospital(hospitalname: $hospitalname2, measurename: $measurename2, index: $index2), $hospitalname1 == $hospitalname2, $measurename1 == $measurename2, $index1 != $index2 -> #fail.
+
+// FD: HospitalName,MeasureName -> Sample
+e135: hospital(hospitalname: $hospitalname1, measurename: $measurename1, sample: $sample1), hospital(hospitalname: $hospitalname2, measurename: $measurename2, sample: $sample2), $hospitalname1 == $hospitalname2, $measurename1 == $measurename2, $sample1 != $sample2 -> #fail.
+
+// FD: HospitalName,MeasureName -> Score
+e136: hospital(hospitalname: $hospitalname1, measurename: $measurename1, score: $score1), hospital(hospitalname: $hospitalname2, measurename: $measurename2, score: $score2), $hospitalname1 == $hospitalname2, $measurename1 == $measurename2, $score1 != $score2 -> #fail.
+
+// FD: HospitalName,MeasureName -> StateAverage
+e137: hospital(hospitalname: $hospitalname1, measurename: $measurename1, stateaverage: $stateaverage1), hospital(hospitalname: $hospitalname2, measurename: $measurename2, stateaverage: $stateaverage2), $hospitalname1 == $hospitalname2, $measurename1 == $measurename2, $stateaverage1 != $stateaverage2 -> #fail.
+
+// FD: ProviderNumber -> PhoneNumber
+e138: hospital(providernumber: $providernumber1, phonenumber: $phonenumber1), hospital(providernumber: $providernumber2, phonenumber: $phonenumber2), $providernumber1 == $providernumber2, $phonenumber1 != $phonenumber2 -> #fail.
+
+// FD: ProviderNumber -> Address1
+e139: hospital(providernumber: $providernumber1, address1: $address11), hospital(providernumber: $providernumber2, address1: $address12), $providernumber1 == $providernumber2, $address11 != $address12 -> #fail.
+
+// FD: ProviderNumber -> HospitalName
+e140: hospital(providernumber: $providernumber1, hospitalname: $hospitalname1), hospital(providernumber: $providernumber2, hospitalname: $hospitalname2), $providernumber1 == $providernumber2, $hospitalname1 != $hospitalname2 -> #fail.
+
+// FD: ProviderNumber -> ZipCode
+e141: hospital(providernumber: $providernumber1, zipcode: $zipcode1), hospital(providernumber: $providernumber2, zipcode: $zipcode2), $providernumber1 == $providernumber2, $zipcode1 != $zipcode2 -> #fail.
+
+// FD: ProviderNumber -> City
+e142: hospital(providernumber: $providernumber1, city: $city1), hospital(providernumber: $providernumber2, city: $city2), $providernumber1 == $providernumber2, $city1 != $city2 -> #fail.
+
+// FD: ProviderNumber -> CountyName
+e143: hospital(providernumber: $providernumber1, countyname: $countyname1), hospital(providernumber: $providernumber2, countyname: $countyname2), $providernumber1 == $providernumber2, $countyname1 != $countyname2 -> #fail.
+
+// FD: ProviderNumber -> HospitalOwner
+e144: hospital(providernumber: $providernumber1, hospitalowner: $hospitalowner1), hospital(providernumber: $providernumber2, hospitalowner: $hospitalowner2), $providernumber1 == $providernumber2, $hospitalowner1 != $hospitalowner2 -> #fail.
+
+// FD: ProviderNumber -> State
+e145: hospital(providernumber: $providernumber1, state: $state1), hospital(providernumber: $providernumber2, state: $state2), $providernumber1 == $providernumber2, $state1 != $state2 -> #fail.
+
+// FD: ProviderNumber -> EmergencyService
+e146: hospital(providernumber: $providernumber1, emergencyservice: $emergencyservice1), hospital(providernumber: $providernumber2, emergencyservice: $emergencyservice2), $providernumber1 == $providernumber2, $emergencyservice1 != $emergencyservice2 -> #fail.
+
+// FD: ProviderNumber,MeasureCode -> index
+e147: hospital(providernumber: $providernumber1, measurecode: $measurecode1, index: $index1), hospital(providernumber: $providernumber2, measurecode: $measurecode2, index: $index2), $providernumber1 == $providernumber2, $measurecode1 == $measurecode2, $index1 != $index2 -> #fail.
+
+// FD: ProviderNumber,MeasureCode -> Sample
+e148: hospital(providernumber: $providernumber1, measurecode: $measurecode1, sample: $sample1), hospital(providernumber: $providernumber2, measurecode: $measurecode2, sample: $sample2), $providernumber1 == $providernumber2, $measurecode1 == $measurecode2, $sample1 != $sample2 -> #fail.
+
+// FD: ProviderNumber,MeasureCode -> Score
+e149: hospital(providernumber: $providernumber1, measurecode: $measurecode1, score: $score1), hospital(providernumber: $providernumber2, measurecode: $measurecode2, score: $score2), $providernumber1 == $providernumber2, $measurecode1 == $measurecode2, $score1 != $score2 -> #fail.
+
+// FD: ProviderNumber,MeasureCode -> StateAverage
+e150: hospital(providernumber: $providernumber1, measurecode: $measurecode1, stateaverage: $stateaverage1), hospital(providernumber: $providernumber2, measurecode: $measurecode2, stateaverage: $stateaverage2), $providernumber1 == $providernumber2, $measurecode1 == $measurecode2, $stateaverage1 != $stateaverage2 -> #fail.
+
+// FD: ProviderNumber,MeasureName -> index
+e151: hospital(providernumber: $providernumber1, measurename: $measurename1, index: $index1), hospital(providernumber: $providernumber2, measurename: $measurename2, index: $index2), $providernumber1 == $providernumber2, $measurename1 == $measurename2, $index1 != $index2 -> #fail.
+
+// FD: ProviderNumber,MeasureName -> Sample
+e152: hospital(providernumber: $providernumber1, measurename: $measurename1, sample: $sample1), hospital(providernumber: $providernumber2, measurename: $measurename2, sample: $sample2), $providernumber1 == $providernumber2, $measurename1 == $measurename2, $sample1 != $sample2 -> #fail.
+
+// FD: ProviderNumber,MeasureName -> Score
+e153: hospital(providernumber: $providernumber1, measurename: $measurename1, score: $score1), hospital(providernumber: $providernumber2, measurename: $measurename2, score: $score2), $providernumber1 == $providernumber2, $measurename1 == $measurename2, $score1 != $score2 -> #fail.
+
+// FD: ProviderNumber,MeasureName -> StateAverage
+e154: hospital(providernumber: $providernumber1, measurename: $measurename1, stateaverage: $stateaverage1), hospital(providernumber: $providernumber2, measurename: $measurename2, stateaverage: $stateaverage2), $providernumber1 == $providernumber2, $measurename1 == $measurename2, $stateaverage1 != $stateaverage2 -> #fail.
+
+// FD: ZipCode -> City
+e155: hospital(zipcode: $zipcode1, city: $city1), hospital(zipcode: $zipcode2, city: $city2), $zipcode1 == $zipcode2, $city1 != $city2 -> #fail.
+
+// FD: ZipCode -> CountyName
+e156: hospital(zipcode: $zipcode1, countyname: $countyname1), hospital(zipcode: $zipcode2, countyname: $countyname2), $zipcode1 == $zipcode2, $countyname1 != $countyname2 -> #fail.
+
+// FD: ZipCode -> State
+e157: hospital(zipcode: $zipcode1, state: $state1), hospital(zipcode: $zipcode2, state: $state2), $zipcode1 == $zipcode2, $state1 != $state2 -> #fail.
+
+// FD: ZipCode -> EmergencyService
+e158: hospital(zipcode: $zipcode1, emergencyservice: $emergencyservice1), hospital(zipcode: $zipcode2, emergencyservice: $emergencyservice2), $zipcode1 == $zipcode2, $emergencyservice1 != $emergencyservice2 -> #fail.
+
+// FD: ZipCode,MeasureCode -> StateAverage
+e159: hospital(zipcode: $zipcode1, measurecode: $measurecode1, stateaverage: $stateaverage1), hospital(zipcode: $zipcode2, measurecode: $measurecode2, stateaverage: $stateaverage2), $zipcode1 == $zipcode2, $measurecode1 == $measurecode2, $stateaverage1 != $stateaverage2 -> #fail.
+
+// FD: ZipCode,HospitalOwner,MeasureCode -> index
+e160: hospital(zipcode: $zipcode1, hospitalowner: $hospitalowner1, measurecode: $measurecode1, index: $index1), hospital(zipcode: $zipcode2, hospitalowner: $hospitalowner2, measurecode: $measurecode2, index: $index2), $zipcode1 == $zipcode2, $hospitalowner1 == $hospitalowner2, $measurecode1 == $measurecode2, $index1 != $index2 -> #fail.
+
+// FD: ZipCode,HospitalOwner,MeasureCode -> Sample
+e161: hospital(zipcode: $zipcode1, hospitalowner: $hospitalowner1, measurecode: $measurecode1, sample: $sample1), hospital(zipcode: $zipcode2, hospitalowner: $hospitalowner2, measurecode: $measurecode2, sample: $sample2), $zipcode1 == $zipcode2, $hospitalowner1 == $hospitalowner2, $measurecode1 == $measurecode2, $sample1 != $sample2 -> #fail.
+
+// FD: ZipCode,HospitalOwner,MeasureCode -> Score
+e162: hospital(zipcode: $zipcode1, hospitalowner: $hospitalowner1, measurecode: $measurecode1, score: $score1), hospital(zipcode: $zipcode2, hospitalowner: $hospitalowner2, measurecode: $measurecode2, score: $score2), $zipcode1 == $zipcode2, $hospitalowner1 == $hospitalowner2, $measurecode1 == $measurecode2, $score1 != $score2 -> #fail.
+
+// FD: ZipCode,MeasureName -> StateAverage
+e163: hospital(zipcode: $zipcode1, measurename: $measurename1, stateaverage: $stateaverage1), hospital(zipcode: $zipcode2, measurename: $measurename2, stateaverage: $stateaverage2), $zipcode1 == $zipcode2, $measurename1 == $measurename2, $stateaverage1 != $stateaverage2 -> #fail.
+
+// FD: ZipCode,HospitalOwner,MeasureName -> index
+e164: hospital(zipcode: $zipcode1, hospitalowner: $hospitalowner1, measurename: $measurename1, index: $index1), hospital(zipcode: $zipcode2, hospitalowner: $hospitalowner2, measurename: $measurename2, index: $index2), $zipcode1 == $zipcode2, $hospitalowner1 == $hospitalowner2, $measurename1 == $measurename2, $index1 != $index2 -> #fail.
+
+// FD: ZipCode,HospitalOwner,MeasureName -> Sample
+e165: hospital(zipcode: $zipcode1, hospitalowner: $hospitalowner1, measurename: $measurename1, sample: $sample1), hospital(zipcode: $zipcode2, hospitalowner: $hospitalowner2, measurename: $measurename2, sample: $sample2), $zipcode1 == $zipcode2, $hospitalowner1 == $hospitalowner2, $measurename1 == $measurename2, $sample1 != $sample2 -> #fail.
+
+// FD: ZipCode,HospitalOwner,MeasureName -> Score
+e166: hospital(zipcode: $zipcode1, hospitalowner: $hospitalowner1, measurename: $measurename1, score: $score1), hospital(zipcode: $zipcode2, hospitalowner: $hospitalowner2, measurename: $measurename2, score: $score2), $zipcode1 == $zipcode2, $hospitalowner1 == $hospitalowner2, $measurename1 == $measurename2, $score1 != $score2 -> #fail.
+
+// FD: ZipCode,HospitalOwner -> PhoneNumber
+e167: hospital(zipcode: $zipcode1, hospitalowner: $hospitalowner1, phonenumber: $phonenumber1), hospital(zipcode: $zipcode2, hospitalowner: $hospitalowner2, phonenumber: $phonenumber2), $zipcode1 == $zipcode2, $hospitalowner1 == $hospitalowner2, $phonenumber1 != $phonenumber2 -> #fail.
+
+// FD: ZipCode,HospitalOwner -> Address1
+e168: hospital(zipcode: $zipcode1, hospitalowner: $hospitalowner1, address1: $address11), hospital(zipcode: $zipcode2, hospitalowner: $hospitalowner2, address1: $address12), $zipcode1 == $zipcode2, $hospitalowner1 == $hospitalowner2, $address11 != $address12 -> #fail.
+
+// FD: ZipCode,HospitalOwner -> HospitalName
+e169: hospital(zipcode: $zipcode1, hospitalowner: $hospitalowner1, hospitalname: $hospitalname1), hospital(zipcode: $zipcode2, hospitalowner: $hospitalowner2, hospitalname: $hospitalname2), $zipcode1 == $zipcode2, $hospitalowner1 == $hospitalowner2, $hospitalname1 != $hospitalname2 -> #fail.
+
+// FD: ZipCode,HospitalOwner -> ProviderNumber
+e170: hospital(zipcode: $zipcode1, hospitalowner: $hospitalowner1, providernumber: $providernumber1), hospital(zipcode: $zipcode2, hospitalowner: $hospitalowner2, providernumber: $providernumber2), $zipcode1 == $zipcode2, $hospitalowner1 == $hospitalowner2, $providernumber1 != $providernumber2 -> #fail.
+
+// FD: City -> CountyName
+e171: hospital(city: $city1, countyname: $countyname1), hospital(city: $city2, countyname: $countyname2), $city1 == $city2, $countyname1 != $countyname2 -> #fail.
+
+// FD: City -> State
+e172: hospital(city: $city1, state: $state1), hospital(city: $city2, state: $state2), $city1 == $city2, $state1 != $state2 -> #fail.
+
+// FD: City -> EmergencyService
+e173: hospital(city: $city1, emergencyservice: $emergencyservice1), hospital(city: $city2, emergencyservice: $emergencyservice2), $city1 == $city2, $emergencyservice1 != $emergencyservice2 -> #fail.
+
+// FD: City,MeasureCode -> StateAverage
+e174: hospital(city: $city1, measurecode: $measurecode1, stateaverage: $stateaverage1), hospital(city: $city2, measurecode: $measurecode2, stateaverage: $stateaverage2), $city1 == $city2, $measurecode1 == $measurecode2, $stateaverage1 != $stateaverage2 -> #fail.
+
+// FD: City,MeasureName -> StateAverage
+e175: hospital(city: $city1, measurename: $measurename1, stateaverage: $stateaverage1), hospital(city: $city2, measurename: $measurename2, stateaverage: $stateaverage2), $city1 == $city2, $measurename1 == $measurename2, $stateaverage1 != $stateaverage2 -> #fail.
+
+// FD: CountyName -> State
+e176: hospital(countyname: $countyname1, state: $state1), hospital(countyname: $countyname2, state: $state2), $countyname1 == $countyname2, $state1 != $state2 -> #fail.
+
+// FD: CountyName -> EmergencyService
+e177: hospital(countyname: $countyname1, emergencyservice: $emergencyservice1), hospital(countyname: $countyname2, emergencyservice: $emergencyservice2), $countyname1 == $countyname2, $emergencyservice1 != $emergencyservice2 -> #fail.
+
+// FD: CountyName,MeasureCode -> StateAverage
+e178: hospital(countyname: $countyname1, measurecode: $measurecode1, stateaverage: $stateaverage1), hospital(countyname: $countyname2, measurecode: $measurecode2, stateaverage: $stateaverage2), $countyname1 == $countyname2, $measurecode1 == $measurecode2, $stateaverage1 != $stateaverage2 -> #fail.
+
+// FD: CountyName,MeasureName -> StateAverage
+e179: hospital(countyname: $countyname1, measurename: $measurename1, stateaverage: $stateaverage1), hospital(countyname: $countyname2, measurename: $measurename2, stateaverage: $stateaverage2), $countyname1 == $countyname2, $measurename1 == $measurename2, $stateaverage1 != $stateaverage2 -> #fail.
+
+// FD: MeasureCode -> MeasureName
+e180: hospital(measurecode: $measurecode1, measurename: $measurename1), hospital(measurecode: $measurecode2, measurename: $measurename2), $measurecode1 == $measurecode2, $measurename1 != $measurename2 -> #fail.
+
+// FD: MeasureCode -> Condition
+e181: hospital(measurecode: $measurecode1, condition: $condition1), hospital(measurecode: $measurecode2, condition: $condition2), $measurecode1 == $measurecode2, $condition1 != $condition2 -> #fail.
+
+// FD: State,MeasureCode -> StateAverage
+e182: hospital(state: $state1, measurecode: $measurecode1, stateaverage: $stateaverage1), hospital(state: $state2, measurecode: $measurecode2, stateaverage: $stateaverage2), $state1 == $state2, $measurecode1 == $measurecode2, $stateaverage1 != $stateaverage2 -> #fail.
+
+// FD: MeasureName -> MeasureCode
+e183: hospital(measurename: $measurename1, measurecode: $measurecode1), hospital(measurename: $measurename2, measurecode: $measurecode2), $measurename1 == $measurename2, $measurecode1 != $measurecode2 -> #fail.
+
+// FD: MeasureName -> Condition
+e184: hospital(measurename: $measurename1, condition: $condition1), hospital(measurename: $measurename2, condition: $condition2), $measurename1 == $measurename2, $condition1 != $condition2 -> #fail.
+
+// FD: State,MeasureName -> StateAverage
+e185: hospital(state: $state1, measurename: $measurename1, stateaverage: $stateaverage1), hospital(state: $state2, measurename: $measurename2, stateaverage: $stateaverage2), $state1 == $state2, $measurename1 == $measurename2, $stateaverage1 != $stateaverage2 -> #fail.
+
