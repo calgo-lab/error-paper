@@ -1,0 +1,742 @@
+<vioGenQueries>
+  <vioGenQuery id="e1">
+    <comparison>(address31 != address32)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e2">
+    <comparison>(address21 != address22)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e3">
+    <comparison>(hospitaltype1 != hospitaltype2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e4">
+    <comparison>(sample1 != sample2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e5">
+    <comparison>(score1 != score2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e6">
+    <comparison>(stateaverage1 != stateaverage2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e7">
+    <comparison>(phonenumber1 != phonenumber2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e8">
+    <comparison>(address11 != address12)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e9">
+    <comparison>(hospitalname1 != hospitalname2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e10">
+    <comparison>(providernumber1 != providernumber2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e11">
+    <comparison>(zipcode1 != zipcode2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e12">
+    <comparison>(city1 != city2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e13">
+    <comparison>(countyname1 != countyname2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e14">
+    <comparison>(measurecode1 != measurecode2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e15">
+    <comparison>(measurename1 != measurename2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e16">
+    <comparison>(hospitalowner1 != hospitalowner2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e17">
+    <comparison>(condition1 != condition2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e18">
+    <comparison>(state1 != state2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e19">
+    <comparison>(emergencyservice1 != emergencyservice2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e20">
+    <comparison>(phonenumber1 != phonenumber2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e21">
+    <comparison>(address11 != address12)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e22">
+    <comparison>(hospitalname1 != hospitalname2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e23">
+    <comparison>(providernumber1 != providernumber2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e24">
+    <comparison>(zipcode1 != zipcode2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e25">
+    <comparison>(stateaverage1 != stateaverage2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e26">
+    <comparison>(state1 != state2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e27">
+    <comparison>(stateaverage1 != stateaverage2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e28">
+    <comparison>(state1 != state2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e29">
+    <comparison>(state1 != state2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e30">
+    <comparison>(state1 != state2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e31">
+    <comparison>(state1 != state2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e32">
+    <comparison>(index1 != index2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e33">
+    <comparison>(score1 != score2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e34">
+    <comparison>(index1 != index2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e35">
+    <comparison>(score1 != score2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e36">
+    <comparison>(phonenumber1 != phonenumber2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e37">
+    <comparison>(address11 != address12)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e38">
+    <comparison>(hospitalname1 != hospitalname2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e39">
+    <comparison>(providernumber1 != providernumber2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e40">
+    <comparison>(zipcode1 != zipcode2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e41">
+    <comparison>(phonenumber1 != phonenumber2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e42">
+    <comparison>(address11 != address12)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e43">
+    <comparison>(hospitalname1 != hospitalname2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e44">
+    <comparison>(providernumber1 != providernumber2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e45">
+    <comparison>(hospitalowner1 != hospitalowner2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e46">
+    <comparison>(index1 != index2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e47">
+    <comparison>(score1 != score2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e48">
+    <comparison>(index1 != index2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e49">
+    <comparison>(score1 != score2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e50">
+    <comparison>(index1 != index2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e51">
+    <comparison>(score1 != score2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e52">
+    <comparison>(phonenumber1 != phonenumber2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e53">
+    <comparison>(address11 != address12)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e54">
+    <comparison>(hospitalname1 != hospitalname2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e55">
+    <comparison>(providernumber1 != providernumber2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e56">
+    <comparison>(zipcode1 != zipcode2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e57">
+    <comparison>(index1 != index2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e58">
+    <comparison>(score1 != score2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e59">
+    <comparison>(phonenumber1 != phonenumber2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e60">
+    <comparison>(address11 != address12)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e61">
+    <comparison>(hospitalname1 != hospitalname2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e62">
+    <comparison>(providernumber1 != providernumber2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e63">
+    <comparison>(zipcode1 != zipcode2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e64">
+    <comparison>(stateaverage1 != stateaverage2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e65">
+    <comparison>(state1 != state2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e66">
+    <comparison>(stateaverage1 != stateaverage2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e67">
+    <comparison>(state1 != state2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e68">
+    <comparison>(measurecode1 != measurecode2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e69">
+    <comparison>(measurename1 != measurename2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e70">
+    <comparison>(condition1 != condition2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e71">
+    <comparison>(state1 != state2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e72">
+    <comparison>(index1 != index2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e73">
+    <comparison>(sample1 != sample2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e74">
+    <comparison>(score1 != score2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e75">
+    <comparison>(index1 != index2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e76">
+    <comparison>(sample1 != sample2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e77">
+    <comparison>(score1 != score2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e78">
+    <comparison>(index1 != index2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e79">
+    <comparison>(sample1 != sample2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e80">
+    <comparison>(score1 != score2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e81">
+    <comparison>(index1 != index2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e82">
+    <comparison>(sample1 != sample2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e83">
+    <comparison>(score1 != score2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e84">
+    <comparison>(index1 != index2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e85">
+    <comparison>(sample1 != sample2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e86">
+    <comparison>(score1 != score2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e87">
+    <comparison>(address11 != address12)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e88">
+    <comparison>(hospitalname1 != hospitalname2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e89">
+    <comparison>(providernumber1 != providernumber2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e90">
+    <comparison>(zipcode1 != zipcode2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e91">
+    <comparison>(city1 != city2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e92">
+    <comparison>(countyname1 != countyname2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e93">
+    <comparison>(hospitalowner1 != hospitalowner2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e94">
+    <comparison>(state1 != state2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e95">
+    <comparison>(emergencyservice1 != emergencyservice2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e96">
+    <comparison>(index1 != index2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e97">
+    <comparison>(sample1 != sample2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e98">
+    <comparison>(score1 != score2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e99">
+    <comparison>(stateaverage1 != stateaverage2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e100">
+    <comparison>(index1 != index2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e101">
+    <comparison>(sample1 != sample2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e102">
+    <comparison>(score1 != score2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e103">
+    <comparison>(stateaverage1 != stateaverage2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e104">
+    <comparison>(phonenumber1 != phonenumber2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e105">
+    <comparison>(hospitalname1 != hospitalname2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e106">
+    <comparison>(providernumber1 != providernumber2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e107">
+    <comparison>(zipcode1 != zipcode2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e108">
+    <comparison>(city1 != city2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e109">
+    <comparison>(countyname1 != countyname2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e110">
+    <comparison>(hospitalowner1 != hospitalowner2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e111">
+    <comparison>(state1 != state2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e112">
+    <comparison>(emergencyservice1 != emergencyservice2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e113">
+    <comparison>(index1 != index2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e114">
+    <comparison>(sample1 != sample2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e115">
+    <comparison>(score1 != score2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e116">
+    <comparison>(stateaverage1 != stateaverage2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e117">
+    <comparison>(index1 != index2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e118">
+    <comparison>(sample1 != sample2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e119">
+    <comparison>(score1 != score2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e120">
+    <comparison>(stateaverage1 != stateaverage2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e121">
+    <comparison>(phonenumber1 != phonenumber2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e122">
+    <comparison>(address11 != address12)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e123">
+    <comparison>(providernumber1 != providernumber2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e124">
+    <comparison>(zipcode1 != zipcode2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e125">
+    <comparison>(city1 != city2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e126">
+    <comparison>(countyname1 != countyname2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e127">
+    <comparison>(hospitalowner1 != hospitalowner2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e128">
+    <comparison>(state1 != state2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e129">
+    <comparison>(emergencyservice1 != emergencyservice2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e130">
+    <comparison>(index1 != index2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e131">
+    <comparison>(sample1 != sample2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e132">
+    <comparison>(score1 != score2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e133">
+    <comparison>(stateaverage1 != stateaverage2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e134">
+    <comparison>(index1 != index2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e135">
+    <comparison>(sample1 != sample2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e136">
+    <comparison>(score1 != score2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e137">
+    <comparison>(stateaverage1 != stateaverage2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e138">
+    <comparison>(phonenumber1 != phonenumber2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e139">
+    <comparison>(address11 != address12)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e140">
+    <comparison>(hospitalname1 != hospitalname2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e141">
+    <comparison>(zipcode1 != zipcode2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e142">
+    <comparison>(city1 != city2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e143">
+    <comparison>(countyname1 != countyname2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e144">
+    <comparison>(hospitalowner1 != hospitalowner2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e145">
+    <comparison>(state1 != state2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e146">
+    <comparison>(emergencyservice1 != emergencyservice2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e147">
+    <comparison>(index1 != index2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e148">
+    <comparison>(sample1 != sample2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e149">
+    <comparison>(score1 != score2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e150">
+    <comparison>(stateaverage1 != stateaverage2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e151">
+    <comparison>(index1 != index2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e152">
+    <comparison>(sample1 != sample2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e153">
+    <comparison>(score1 != score2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e154">
+    <comparison>(stateaverage1 != stateaverage2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e155">
+    <comparison>(city1 != city2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e156">
+    <comparison>(countyname1 != countyname2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e157">
+    <comparison>(state1 != state2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e158">
+    <comparison>(emergencyservice1 != emergencyservice2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e159">
+    <comparison>(stateaverage1 != stateaverage2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e160">
+    <comparison>(index1 != index2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e161">
+    <comparison>(sample1 != sample2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e162">
+    <comparison>(score1 != score2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e163">
+    <comparison>(stateaverage1 != stateaverage2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e164">
+    <comparison>(index1 != index2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e165">
+    <comparison>(sample1 != sample2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e166">
+    <comparison>(score1 != score2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e167">
+    <comparison>(phonenumber1 != phonenumber2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e168">
+    <comparison>(address11 != address12)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e169">
+    <comparison>(hospitalname1 != hospitalname2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e170">
+    <comparison>(providernumber1 != providernumber2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e171">
+    <comparison>(countyname1 != countyname2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e172">
+    <comparison>(state1 != state2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e173">
+    <comparison>(emergencyservice1 != emergencyservice2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e174">
+    <comparison>(stateaverage1 != stateaverage2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e175">
+    <comparison>(stateaverage1 != stateaverage2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e176">
+    <comparison>(state1 != state2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e177">
+    <comparison>(emergencyservice1 != emergencyservice2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e178">
+    <comparison>(stateaverage1 != stateaverage2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e179">
+    <comparison>(stateaverage1 != stateaverage2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e180">
+    <comparison>(measurename1 != measurename2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e181">
+    <comparison>(condition1 != condition2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e182">
+    <comparison>(stateaverage1 != stateaverage2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e183">
+    <comparison>(measurecode1 != measurecode2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e184">
+    <comparison>(condition1 != condition2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+  <vioGenQuery id="e185">
+    <comparison>(stateaverage1 != stateaverage2)</comparison>
+    <percentage>1.0</percentage>
+  </vioGenQuery>
+</vioGenQueries>
