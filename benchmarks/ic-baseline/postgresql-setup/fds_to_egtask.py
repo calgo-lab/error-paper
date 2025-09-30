@@ -135,5 +135,5 @@ def generate_egtask_xml(
     print(f"EGTask XML generated at {output_xml}")
 
 
-# Example usage
-generate_egtask_xml()
+if __name__ == "__main__":
+    generate_egtask_xml()

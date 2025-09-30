@@ -60,7 +60,6 @@ fds={fds_file}
     print(f"Wrote BART config to {out_file}")
 
 if __name__ == "__main__":
-    # Example: mine FDs with desbordante
     algo = desbordante.fd.algorithms.Default()
     algo.load_data(table=("../../../data/hospital/clean.csv", ",", True))
     algo.execute()
@@ -74,12 +73,12 @@ if __name__ == "__main__":
 
     # Step 3: Generate config file
     generate_bart_conf(
-    dbname="postgres",           # default DB you used
-    user="postgres",             # your Postgres username
-    password="yourpassword",     # the password you set in Helm
-    table="hosp",                # your table name
+    dbname="postgres",
+    user="postgres",
+    password="yourpassword",
+    table="hosp",
     fds_file="bart_out/HOSP.fds",
-    host="127.0.0.1",            # since you are port-forwarding
+    host="127.0.0.1",            # since we're port-forwarding
     port=5432,                    # local forwarded port
     out_file="bart_out/config.conf"
     )
